@@ -9,11 +9,11 @@ public class AL01A {
      */
     public  String iterativeF(int n) {
 
-        int a = 1;
-        int b = 1;
-        int c;
+        long a = 1;
+        long b = 1;
+        long c;
 
-        for(int i = 3; i<=n; i++){
+        for(long i = 3; i<=n; i++){
             c= a+b;
             a=b;
             b=c;
