@@ -9,13 +9,18 @@ public class AL01A {
      * @param n The number of the sequence to compute.
      * @return The n-th number in Fibonacci series.
      */
-    public  String iterativeF(long n) {
+    public  String iterativeF(int n) {
 
         BigInteger a = BigInteger.valueOf(1);
         BigInteger b = BigInteger.valueOf(1);
         BigInteger c;
 
-        for(long i = 3; i<=n; i++){
+        if(n ==0){
+            System.out.println("Arv peab olema 0st suurem");
+
+        }
+
+        for(int i = 3; i<=n; i++){
             c= a.add(b);
             a=b;
             b=c;
