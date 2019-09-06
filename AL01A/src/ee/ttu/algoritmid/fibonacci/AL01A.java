@@ -14,10 +14,8 @@ public class AL01A {
         BigInteger a = BigInteger.valueOf(1);
         BigInteger b = BigInteger.valueOf(1);
         BigInteger c;
-
-        if(n ==0){
-            System.out.println("Arv peab olema 0st suurem");
-
+        if(n==0){
+            b=BigInteger.valueOf(0);
         }
 
         for(int i = 3; i<=n; i++){
@@ -26,8 +24,7 @@ public class AL01A {
             b=c;
 
         }
-        String tulemus = String.valueOf(b);
-        return tulemus;
+        return String.valueOf(b);
     }
 
     public static void main(String[] args) {
