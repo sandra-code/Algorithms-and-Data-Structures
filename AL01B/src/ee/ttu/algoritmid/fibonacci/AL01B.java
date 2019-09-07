@@ -2,6 +2,8 @@ package ee.ttu.algoritmid.fibonacci;
 
 import java.math.BigInteger;
 import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class AL01B {
@@ -12,11 +14,10 @@ public class AL01B {
      * @return The time estimate or exact time in YEARS.
      */
     public String timeToComputeRecursiveFibonacci(int n) {
-        long start = System.currentTimeMillis();
+        long start = System.nanoTime();
         recursiveF(n);
-        long elapsedTime = System.currentTimeMillis()-start;
-        long convert = (TimeUnit.DAYS.convert(elapsedTime, TimeUnit.MILLISECONDS))/365;
-        return String.valueOf(convert);
+        long elapsedTime = System.nanoTime()-start;
+        return String.valueOf((TimeUnit.NANOSECONDS.toDays(elapsedTime))/365);
     }
 
     /**
