@@ -16,6 +16,7 @@ public class AL01B {
     /** Finding the years using golden ratio formula ϕ=(1+5√)/2
      * Converting nanoseconds to milliseconds
      * 31536000 is seconds in a year
+     * Golden ratio is base and i is n-th Fibonacci nr
      **/
 
     public double oneLoopTest(int i){
