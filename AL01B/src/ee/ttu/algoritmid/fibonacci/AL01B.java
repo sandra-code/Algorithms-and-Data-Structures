@@ -13,6 +13,10 @@ public class AL01B {
         return Double.toString(oneLoopTest(n));
     }
 
+    /** Finding the years using golden ratio formula ϕ=(1+5√)/2
+     * Converting nanoseconds to milliseconds
+     * 31536000 is seconds in a year
+     **/
 
     public double oneLoopTest(int i){
         double goldenRatio = (1+Math.sqrt(5))/2;
@@ -22,6 +26,7 @@ public class AL01B {
 
     }
 
+    /** Calculates how long does it take to go through 1 recursive loop **/
     public long timerFunction(){
         long start = System.nanoTime();
         recursiveF(1);
