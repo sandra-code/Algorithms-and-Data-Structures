@@ -15,7 +15,7 @@ public class AL01B {
         long start = System.currentTimeMillis();
         recursiveF(n);
         long elapsedTime = System.currentTimeMillis()-start;
-        long convert = (TimeUnit.DAYS.convert(elapsedTime, TimeUnit.NANOSECONDS))/365;
+        long convert = (TimeUnit.DAYS.convert(elapsedTime, TimeUnit.MILLISECONDS))/365;
         return String.valueOf(convert);
     }
 
