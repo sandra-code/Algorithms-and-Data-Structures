@@ -2,7 +2,6 @@ package ee.ttu.algoritmid.fibonacci;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.math.RoundingMode;
 import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 
@@ -18,20 +17,14 @@ public class AL01B {
         /** Calculating the rows with formula: 3 * F(n) - 2 **/
         BigInteger rows = (recursiveF(n).multiply(new BigInteger("3"))).subtract(new BigInteger("2"));
 
-        /** Getting average time of 100 loops**/
-
-        long start = System.currentTimeMillis();
-        for (int i = 1; i < 1000; ++i) {
-            recursiveF(1);
-            i++;
-        }
-        BigDecimal t = new BigDecimal(TimeUnit.MILLISECONDS.toDays(System.currentTimeMillis() - start)).divide(new BigDecimal("1000"),5,  RoundingMode.HALF_UP);
-        BigDecimal elapsed = t.divide(new BigDecimal("365"),5, RoundingMode.HALF_UP);
-
-
-        /** Calculating the estimated time **/
-        BigDecimal time = (new BigDecimal(rows)).multiply(elapsed);
-        return String.valueOf(time);
+        /** Calculating the time in years **/
+        long start = 0, estimatedTime =0;
+        start = System.nanoTime();
+        recursiveF(n);
+        estimatedTime=System.nanoTime()-start;
+        double timeInYears= ((double) estimatedTime / (double) TimeUnit.DAYS.toNanos(1))/365;
+        double result = rows.intValue() * timeInYears;
+        return String.valueOf(result);
     }
 
     /**
@@ -48,6 +41,6 @@ public class AL01B {
 
     public static void main(String[] args) {
         AL01B al01B = new AL01B();
-        System.out.println(al01B.timeToComputeRecursiveFibonacci(69));
+        System.out.println(al01B.timeToComputeRecursiveFibonacci(20));
     }
 }
