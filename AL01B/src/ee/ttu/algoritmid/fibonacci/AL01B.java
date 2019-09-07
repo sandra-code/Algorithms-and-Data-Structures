@@ -14,17 +14,13 @@ public class AL01B {
      */
     public String timeToComputeRecursiveFibonacci(int n) {
 
-        /** Calculating the rows with formula: 3 * F(n) - 2 **/
-        BigInteger rows = (recursiveF(n).multiply(new BigInteger("3"))).subtract(new BigInteger("2"));
-
         /** Calculating the time in years **/
         long start = 0, estimatedTime =0;
         start = System.nanoTime();
         recursiveF(n);
         estimatedTime=System.nanoTime()-start;
-        double timeInYears= ((double) estimatedTime / (double) TimeUnit.DAYS.toNanos(1))/365;
-        double result = timeInYears;
-        return String.valueOf(result);
+        BigDecimal timeInYears= BigDecimal.valueOf(((double)estimatedTime /  (double)TimeUnit.DAYS.toNanos(1))/365);
+        return String.valueOf(timeInYears);
     }
 
     /**
