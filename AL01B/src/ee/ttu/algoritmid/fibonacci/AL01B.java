@@ -17,7 +17,7 @@ public class AL01B {
         long start = System.currentTimeMillis();
         recursiveF(n);
         long elapsedTime = System.currentTimeMillis()-start;
-        return String.valueOf((TimeUnit.NANOSECONDS.toDays(elapsedTime))/365);
+        return String.valueOf(TimeUnit.MILLISECONDS.toDays(elapsedTime)/365);
     }
 
     /**
@@ -27,7 +27,7 @@ public class AL01B {
      * @return The n-th Fibonacci number as a string.
      */
     public BigInteger recursiveF(int n) {
-        if (n <= 1)
+        if (n <= 2)
             return BigInteger.valueOf(n);
         return recursiveF(n - 1).add(recursiveF(n - 2));
     }
