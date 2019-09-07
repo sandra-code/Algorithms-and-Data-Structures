@@ -15,9 +15,8 @@ public class AL01B {
         long start = System.currentTimeMillis();
         recursiveF(n);
         long elapsedTime = System.currentTimeMillis()-start;
-        long convert = TimeUnit.DAYS.convert(elapsedTime, TimeUnit.NANOSECONDS);
-        long years = convert/365;
-        return String.valueOf(years);
+        long convert = (TimeUnit.DAYS.convert(elapsedTime, TimeUnit.NANOSECONDS))/365;
+        return String.valueOf(convert);
     }
 
     /**
@@ -34,6 +33,6 @@ public class AL01B {
 
     public static void main(String[] args) {
         AL01B al01B = new AL01B();
-        System.out.println(al01B.timeToComputeRecursiveFibonacci(13));
+        System.out.println(al01B.timeToComputeRecursiveFibonacci(10));
     }
 }
