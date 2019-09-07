@@ -22,13 +22,15 @@ public class AL01B {
 
         long start = System.nanoTime();
         for (int i = 0; i < 100; ++i) {
-            recursiveF(2);
+            recursiveF(n);
+            i++;
         }
-        BigDecimal elapsed = (new BigDecimal(System.nanoTime()).subtract(new BigDecimal(start))).divide(new BigDecimal("100"),2, RoundingMode.HALF_UP);
+        long t = TimeUnit.NANOSECONDS.toDays(System.nanoTime() - start);
+        BigDecimal elapsed = ((new BigDecimal(String.valueOf(t))).divide(new BigDecimal("100"),5, RoundingMode.HALF_UP)).divide(new BigDecimal("365"),5, RoundingMode.HALF_UP);
 
 
         /** Calculating the estimated time **/
-        BigDecimal time = (new BigDecimal(rows).multiply(elapsed)).divide(new BigDecimal("365"),2, RoundingMode.HALF_UP);
+        BigDecimal time = (new BigDecimal(rows)).multiply(elapsed);
         return String.valueOf(time);
     }
 
@@ -46,6 +48,6 @@ public class AL01B {
 
     public static void main(String[] args) {
         AL01B al01B = new AL01B();
-        System.out.println(al01B.timeToComputeRecursiveFibonacci(5));
+        System.out.println(al01B.timeToComputeRecursiveFibonacci(30));
     }
 }
