@@ -48,6 +48,6 @@ public class AL01B {
 
     public static void main(String[] args) {
         AL01B al01B = new AL01B();
-        System.out.println(al01B.timeToComputeRecursiveFibonacci(30));
+        System.out.println(al01B.timeToComputeRecursiveFibonacci(69));
     }
 }
