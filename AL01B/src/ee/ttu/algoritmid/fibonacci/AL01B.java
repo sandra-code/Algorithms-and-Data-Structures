@@ -1,7 +1,6 @@
 package ee.ttu.algoritmid.fibonacci;
 
 import java.math.BigInteger;
-import java.util.concurrent.TimeUnit;
 
 public class AL01B {
 
@@ -16,21 +15,18 @@ public class AL01B {
 
 
     public double oneLoopTest(int i){
-        double n = (1+Math.sqrt(5))/2;
-        long a = onefuncal();
-        double t = 10e9/a;
-        double ans = (Math.pow(n,i)/t)/31557600;
-        return ans;
+        double goldenRatio = (1+Math.sqrt(5))/2;
+        long timer = timerFunction();
+        double t = 10e9/timer;
+        return (Math.pow(goldenRatio,i)/t)/31536000;
 
     }
 
-    public long onefuncal(){
-        long startTime = System.nanoTime();
+    public long timerFunction(){
+        long start = System.nanoTime();
         recursiveF(1);
-        long stopTime = System.nanoTime();
-
-        return stopTime-startTime;
-
+        long stop = System.nanoTime();
+        return stop-start;
     }
 
     /**
@@ -47,6 +43,6 @@ public class AL01B {
 
     public static void main(String[] args) {
         AL01B al01B = new AL01B();
-        System.out.println(al01B.timeToComputeRecursiveFibonacci(20));
+        System.out.println(al01B.timeToComputeRecursiveFibonacci(69));
     }
 }
