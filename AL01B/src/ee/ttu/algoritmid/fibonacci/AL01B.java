@@ -17,7 +17,7 @@ public class AL01B {
         /** Calculating the time in years **/
         long start = 0, estimatedTime =0;
         start = System.nanoTime();
-        recursiveF(n);
+        recursiveF(1);
         estimatedTime=System.nanoTime()-start;
         double timeInYears= ((double) estimatedTime / (double) TimeUnit.DAYS.toNanos(1))/365;
         return String.valueOf(timeInYears);
@@ -37,6 +37,6 @@ public class AL01B {
 
     public static void main(String[] args) {
         AL01B al01B = new AL01B();
-        System.out.println(al01B.timeToComputeRecursiveFibonacci(20));
+        System.out.println(al01B.timeToComputeRecursiveFibonacci(200000));
     }
 }
