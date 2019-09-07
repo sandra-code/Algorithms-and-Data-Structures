@@ -14,6 +14,7 @@ public class AL01B {
         return Double.toString(oneLoopTest(n));
     }
 
+
     public double oneLoopTest(int i){
         double n = (1+Math.sqrt(5))/2;
         long a = onefuncal();
@@ -46,6 +47,6 @@ public class AL01B {
 
     public static void main(String[] args) {
         AL01B al01B = new AL01B();
-        System.out.println(al01B.timeToComputeRecursiveFibonacci(69));
+        System.out.println(al01B.timeToComputeRecursiveFibonacci(20));
     }
 }
