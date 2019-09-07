@@ -23,7 +23,7 @@ public class AL01B {
         recursiveF(n);
         estimatedTime=System.nanoTime()-start;
         double timeInYears= ((double) estimatedTime / (double) TimeUnit.DAYS.toNanos(1))/365;
-        double result = rows.intValue() * timeInYears;
+        double result = timeInYears;
         return String.valueOf(result);
     }
 
