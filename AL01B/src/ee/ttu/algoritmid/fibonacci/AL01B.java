@@ -20,13 +20,13 @@ public class AL01B {
 
         /** Getting average time of 100 loops**/
 
-        long start = System.nanoTime();
-        for (int i = 0; i < 100; ++i) {
-            recursiveF(n);
+        long start = System.currentTimeMillis();
+        for (int i = 1; i < 1000; ++i) {
+            recursiveF(1);
             i++;
         }
-        long t = TimeUnit.NANOSECONDS.toDays(System.nanoTime() - start);
-        BigDecimal elapsed = ((new BigDecimal(String.valueOf(t))).divide(new BigDecimal("100"),5, RoundingMode.HALF_UP)).divide(new BigDecimal("365"),5, RoundingMode.HALF_UP);
+        BigDecimal t = new BigDecimal(TimeUnit.MILLISECONDS.toDays(System.currentTimeMillis() - start)).divide(new BigDecimal("1000"),5,  RoundingMode.HALF_UP);
+        BigDecimal elapsed = t.divide(new BigDecimal("365"),5, RoundingMode.HALF_UP);
 
 
         /** Calculating the estimated time **/
