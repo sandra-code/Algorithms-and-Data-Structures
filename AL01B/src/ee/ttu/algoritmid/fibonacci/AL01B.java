@@ -14,9 +14,9 @@ public class AL01B {
      * @return The time estimate or exact time in YEARS.
      */
     public String timeToComputeRecursiveFibonacci(int n) {
-        long start = System.nanoTime();
+        long start = System.currentTimeMillis();
         recursiveF(n);
-        long elapsedTime = System.nanoTime()-start;
+        long elapsedTime = System.currentTimeMillis()-start;
         return String.valueOf((TimeUnit.NANOSECONDS.toDays(elapsedTime))/365);
     }
 
