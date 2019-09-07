@@ -19,7 +19,7 @@ public class AL01B {
         start = System.nanoTime();
         recursiveF(n);
         estimatedTime=System.nanoTime()-start;
-        BigDecimal timeInYears= BigDecimal.valueOf(((double)estimatedTime /  (double)TimeUnit.DAYS.toNanos(1))/365);
+        double timeInYears= ((double) estimatedTime / (double) TimeUnit.DAYS.toNanos(1))/365;
         return String.valueOf(timeInYears);
     }
 
