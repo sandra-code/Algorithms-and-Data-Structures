@@ -23,7 +23,7 @@ public class GuessingGame {
         /** Searching the city**/
         int low =1;
         int high = cityArray.length-1;
-        int mid = (low+high)/2;
+        int mid = (int) Math.floor((low+high)/2);
 
         while(oracle.isIt(cityArray[mid])!="correct!"){
             if(oracle.isIt(cityArray[mid])=="lower population"){
@@ -35,10 +35,13 @@ public class GuessingGame {
             if(low>high){
                 mid=(low+high)/2;
             }
+
+        }
+        if(oracle.isIt(cityArray[mid])=="correct!") {
+            return cityArray[mid].getName();
         }
 
-
-        return cityArray[mid].getName();
+        return "There is no such city in the array";
     }
 
     public static void main(String[] args) {
