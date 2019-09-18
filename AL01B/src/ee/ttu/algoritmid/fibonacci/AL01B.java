@@ -13,8 +13,8 @@ public class AL01B {
         return Double.toString(oneLoopTest(n));
     }
 
-    /** Finding the years using golden ratio formula ϕ=(1+5√)/2
-     * Converting nanoseconds to milliseconds
+    /** Finding the years using golden ratio formula ϕ=(1+√5)/2
+     * Converting nanoseconds to millieconds
      * 31536000 is seconds in a year
      * Golden ratio is base and i is n-th Fibonacci nr
      **/
