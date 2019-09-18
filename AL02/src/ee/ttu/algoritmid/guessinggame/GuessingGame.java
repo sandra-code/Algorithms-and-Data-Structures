@@ -15,7 +15,7 @@ public class GuessingGame {
      * @param cityArray - All the possible cities.
      * @return the name of the city.
      */
-    public String play(City[] cityArray, City city) {
+    public String play(City[] cityArray) {
 
         /** Sorting the array**/
         Arrays.sort(cityArray, Comparator.comparing(City::getPopulation));
@@ -57,7 +57,7 @@ public class GuessingGame {
         };
 
         GuessingGame guessingGame = new GuessingGame(new Oracle(listOfCities[0])); //dehli
-        System.out.println(guessingGame.play(listOfCities, listOfCities[1])); //dehli
+        System.out.println(guessingGame.play(listOfCities)); //dehli
 
     }
 
