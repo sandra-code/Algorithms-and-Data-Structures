@@ -32,12 +32,9 @@ public class GuessingGame {
             else if (oracle.isIt(cityArray[mid])=="higher population"){
                 low = mid+1;
             }
-            else{
-                return cityArray[mid].getName();
-            }
         }
 
-        return "city not found";
+        return cityArray[mid].getName();
 
     }
 
