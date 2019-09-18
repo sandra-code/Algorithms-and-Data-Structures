@@ -35,10 +35,10 @@ public class GuessingGame {
             if(oracle.isIt(cityArray[mid])=="higher population"){
                 mid=(low+high)/2;
             }
-
         }
-        return cityArray[mid].getName();
 
+
+        return cityArray[mid].getName();
     }
 
     public static void main(String[] args) {
