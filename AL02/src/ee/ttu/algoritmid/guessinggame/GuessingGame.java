@@ -15,7 +15,7 @@ public class GuessingGame {
      * @param cityArray - All the possible cities.
      * @return the name of the city.
      */
-    public String play(City[] cityArray) {
+    public String play(City[] cityArray, City city) {
 
         /** Sorting the array**/
         Arrays.sort(cityArray, Comparator.comparing(City::getPopulation));
@@ -24,18 +24,21 @@ public class GuessingGame {
         int low =1;
         int high = cityArray.length-1;
         int mid = (low+high)/2;
-        City city = cityArray[7];
 
-        while(oracle.isIt(city)!="correct!"){
-            if(oracle.isIt(city)=="higher population"){
-                return "higher";
+        while(oracle.isIt(cityArray[mid])!="correct!"){
+            if(oracle.isIt(cityArray[mid])=="lower population"){
+                high = mid-1;
             }
-            if(oracle.isIt(city)=="lower population"){
-                return "lower";
+            else{
+                low = mid+1;
             }
+            if(oracle.isIt(cityArray[mid])=="higher population"){
+                mid=(low+high)/2;
+            }
+
         }
+        return cityArray[mid].getName();
 
-        return city.getName();
     }
 
     public static void main(String[] args) {
@@ -54,7 +57,7 @@ public class GuessingGame {
         };
 
         GuessingGame guessingGame = new GuessingGame(new Oracle(listOfCities[0])); //dehli
-        System.out.println(guessingGame.play(listOfCities)); //dehli
+        System.out.println(guessingGame.play(listOfCities, listOfCities[1])); //dehli
 
     }
 
