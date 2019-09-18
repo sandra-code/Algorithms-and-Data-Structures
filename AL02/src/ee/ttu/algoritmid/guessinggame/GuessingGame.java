@@ -26,13 +26,13 @@ public class GuessingGame {
         int mid = (low+high)/2;
 
         while(oracle.isIt(cityArray[mid])!="correct!"){
-            if(oracle.isIt(cityArray[mid])=="higher population"){
+            if(oracle.isIt(cityArray[mid])=="lower population"){
                 high = mid-1;
             }
             else{
                 low = mid+1;
             }
-            if(oracle.isIt(cityArray[mid])=="lower population"){
+            if(low>high){
                 mid=(low+high)/2;
             }
         }
