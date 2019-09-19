@@ -23,7 +23,7 @@ public class GuessingGame {
         /** Searching the city**/
         int low =1;
         int high = cityArray.length-1;
-        int mid = (low+high)/2;
+        int mid = (int )Math.floor((low+high)/2);
 
         while(oracle.isIt(cityArray[mid])!="correct!"){
             if(oracle.isIt(cityArray[mid])=="lower population"){
@@ -33,7 +33,7 @@ public class GuessingGame {
                 low = mid+1;
             }
             if(low<=high){
-                mid = (low+high)/2;
+                mid =  (int )Math.floor((low+high)/2);
             }
 
         }
