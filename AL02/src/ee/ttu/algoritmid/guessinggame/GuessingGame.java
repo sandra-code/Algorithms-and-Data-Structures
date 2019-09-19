@@ -37,9 +37,8 @@ public class GuessingGame {
             }
 
         }**/
-        int mid =0;
         while(low<= high){
-            mid = (low+high)/2;
+            int mid = (low+high)/2;
 
             if(oracle.isIt(cityArray[mid])=="correct!"){
                 return  cityArray[mid].getName();
