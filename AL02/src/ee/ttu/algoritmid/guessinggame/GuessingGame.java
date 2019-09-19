@@ -32,10 +32,7 @@ public class GuessingGame {
             else{
                 low = mid+1;
             }
-            if(low>high){
-                return "city not found";
-            }
-            else{
+            if(low<=high){
                 mid = (low+high)/2;
             }
 
