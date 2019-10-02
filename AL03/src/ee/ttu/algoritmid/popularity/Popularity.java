@@ -21,13 +21,12 @@ public class Popularity {
 
     int pointPopularity(Integer x,Integer y) {
         int count=0;
+        Point pnt = new Point(x,y);
         for(Point p: points.values()){
-            if(p.equals(new Point(x,y))){
+            if(p.x.equals(pnt.x) && p.y.equals(pnt.y) ){
                 count++;
             }
         }
-
-
         return count;
     }
     /**
@@ -40,6 +39,17 @@ public class Popularity {
 
         return 0;
     }
+
+    public static void main(String[] args) {
+        Popularity pop = new Popularity(10);
+        pop.addPoint(1,3);
+        pop.addPoint(1,3);
+        pop.addPoint(2,3);
+        pop.pointPopularity(1,3);
+
+    }
+
+
 }
 
 class Point{
