@@ -1,35 +1,52 @@
 package ee.ttu.algoritmid.popularity;
 
+
+import java.util.HashMap;
+
 public class Popularity {
+
+    HashMap<Integer, Point> points = new HashMap<Integer, Point>();
 
     public Popularity(int maxCoordinates) {
     }
 
-    /**
-     * @param x, y - coordinates
-     */
-
     void addPoint(Integer x, Integer y) {
-        // todo
+       Point p = new Point(x,y);
+       points.put(p.hashCode(),p);
     }
 
     /**
-     * @param x, y - coordinates
      * @return the number of occurrennces of the point
      */
 
     int pointPopularity(Integer x,Integer y) {
-        return 0;
+        int count=0;
+        for(Point p: points.values()){
+            if(p.equals(new Point(x,y))){
+                count++;
+            }
+        }
+
+
+        return count;
     }
-
-
-
     /**
      * @return the number of occurrennces of the most popular point
      */
 
     int maxPopularity() {
+
+
         return 0;
     }
+}
 
+class Point{
+    Integer x;
+    Integer y;
+    public Point(Integer x, Integer y){
+        this.x=x;
+        this.y=y;
+
+    }
 }
