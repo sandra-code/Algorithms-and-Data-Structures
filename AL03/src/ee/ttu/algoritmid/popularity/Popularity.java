@@ -4,10 +4,12 @@ package ee.ttu.algoritmid.popularity;
 import java.util.HashMap;
 
 public class Popularity {
+    HashMap<Integer, Point> points;
 
-    HashMap<Integer, Point> points = new HashMap<Integer, Point>();
 
     public Popularity(int maxCoordinates) {
+        points = new HashMap<Integer, Point>(maxCoordinates);
+
     }
 
     void addPoint(Integer x, Integer y) {
@@ -45,7 +47,7 @@ public class Popularity {
         pop.addPoint(1,3);
         pop.addPoint(1,3);
         pop.addPoint(2,3);
-        pop.pointPopularity(1,3);
+        pop.maxPopularity();
 
     }
 
