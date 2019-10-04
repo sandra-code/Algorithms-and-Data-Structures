@@ -33,7 +33,7 @@ public class Popularity {
     }
     /**
      * @return the number of occurrennces of the most popular point
-     * test
+     *
      */
 
     int maxPopularity() {
