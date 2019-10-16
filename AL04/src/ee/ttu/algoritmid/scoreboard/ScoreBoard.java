@@ -14,6 +14,7 @@ public class ScoreBoard {
     /**
      * Returns top n number of participants in the checkpoint to be displayed on the scoreboard
      * This method will be queried by the tests every time a new participant is added
+
      */
     public List<Participant> get(int n) {
         return null;
