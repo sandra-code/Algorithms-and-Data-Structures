@@ -1,14 +1,16 @@
 package ee.ttu.algoritmid.scoreboard;
 
 import java.util.List;
+import java.util.TreeSet;
 
 public class ScoreBoard {
 
-
+    TreeSet<Participant> set= new TreeSet<Participant>();
     /**
      * Adds a participant's time to the checkpoint scoreboard
      */
     public void add(Participant participant) {
+        set.add(participant);
     }
 
     /**
@@ -17,6 +19,7 @@ public class ScoreBoard {
 
      */
     public List<Participant> get(int n) {
+
         return null;
     }
 }
