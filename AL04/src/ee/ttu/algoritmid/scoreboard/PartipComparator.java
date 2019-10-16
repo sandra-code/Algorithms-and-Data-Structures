@@ -5,10 +5,7 @@ import java.util.Comparator;
  public class PartipComparator implements Comparator<Participant> {
      @Override
      public int compare(Participant p1, Participant p2){
-         if (p1.equals(p2)){
-             return 0;
-         }
-         return -1;
+         return Integer.compare(p1.getId(),p2.getId());
      }
 
 }
