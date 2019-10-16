@@ -5,7 +5,7 @@ import java.util.*;
 public class ScoreBoard {
 
     TreeSet<Participant> set= new TreeSet<Participant>(new PartipComparator());
-    Iterator value = set.iterator();
+    Iterator<Participant> value = set.iterator();
     /**
      * Adds a participant's time to the checkpoint scoreboard
      */
@@ -20,10 +20,14 @@ public class ScoreBoard {
      */
     public List<Participant> get(int n) {
 
-        List<Participant> l = new ArrayList<Participant>();
-        while(value.hasNext()){
+        List<Participant> l = new ArrayList<>();
+        int start = 0;
+        while(value.hasNext() && start<n){
+            Participant p = value.next();
+            l.add(p);
+            System.out.println(p);
         }
-        return null;
+        return l;
     }
 
     public static void main(String[] args) {
