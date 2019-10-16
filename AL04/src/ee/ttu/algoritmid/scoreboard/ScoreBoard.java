@@ -4,8 +4,7 @@ import java.util.*;
 
 public class ScoreBoard {
 
-    TreeSet<Participant> set= new TreeSet<Participant>(new PartipComparator());
-    Iterator<Participant> value = set.iterator();
+    TreeSet<Participant> set= new TreeSet<>(new PartipComparator());
     /**
      * Adds a participant's time to the checkpoint scoreboard
      */
@@ -19,13 +18,13 @@ public class ScoreBoard {
 
      */
     public List<Participant> get(int n) {
-
+        Iterator<Participant> value = set.iterator();
         List<Participant> l = new ArrayList<>();
         int start = 0;
         while(value.hasNext() && start<n){
             Participant p = value.next();
             l.add(p);
-            System.out.println(p);
+            start++;
         }
         return l;
     }
@@ -33,7 +32,8 @@ public class ScoreBoard {
     public static void main(String[] args) {
         ScoreBoard sb = new ScoreBoard();
         sb.add(new Participant(2,"test",20));
-        sb.get(1);
+        sb.add(new Participant(3,"tests",34));
+        sb.get(4);
     }
 }
 
