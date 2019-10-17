@@ -29,7 +29,7 @@ public class ScoreBoard {
         }
         return l;
     }
-    /**
+
     public static void print(List<Participant> l){
         List<Participant> list = l;
         for (int i =0; i<l.size(); i++){
@@ -46,7 +46,7 @@ public class ScoreBoard {
         sb.add(new Participant(80,"tests",19));
         sb.get(10);
         print(l);
-    }**/
+    }
 }
 
 
