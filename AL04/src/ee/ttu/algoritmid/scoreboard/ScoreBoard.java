@@ -22,13 +22,14 @@ public class ScoreBoard {
     public List<Participant> get(int n) {
         Iterator<Participant> value = set.iterator();
         int start = 0;
-        while(value.hasNext() && start<=n){
+        while(value.hasNext() && start<n){
             Participant p = value.next();
             l.add(p);
             start++;
         }
         return l;
     }
+    /**
     public static void print(List<Participant> l){
         List<Participant> list = l;
         for (int i =0; i<l.size(); i++){
@@ -43,9 +44,9 @@ public class ScoreBoard {
         sb.add(new Participant(56,"tests",19));
         sb.add(new Participant(7,"tests",19));
         sb.add(new Participant(80,"tests",19));
-        sb.get(3);
+        sb.get(10);
         print(l);
-    }
+    }**/
 }
 
 
