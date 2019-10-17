@@ -41,7 +41,8 @@ public class ScoreBoard {
         sb.add(new Participant(3,"tests",34));
         sb.add(new Participant(1,"tests",34));
         sb.add(new Participant(56,"tests",19));
-        sb.add(new Participant(56,"tests",19));
+        sb.add(new Participant(7,"tests",19));
+        sb.add(new Participant(80,"tests",19));
         sb.get(6);
         print(l);
     }
