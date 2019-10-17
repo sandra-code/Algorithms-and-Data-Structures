@@ -7,7 +7,6 @@ public class ScoreBoard {
     TreeSet<Participant> set= new TreeSet<>(new PartipComparator());
     List<Participant> l = new ArrayList<Participant>();
 
-
     /**
      * Adds a participant's time to the checkpoint scoreboard
      */
@@ -30,8 +29,27 @@ public class ScoreBoard {
         }
         return l;
     }
+    /**
+    public static void print(List<Participant> l){
+        for (int i =0; i<l.size(); i++){
+            System.out.println(l.get(i).getTime() + " "+ l.get(i).getId() );
+        }
+    }
+    public static void main(String[] args) {
+        ScoreBoard sb = new ScoreBoard();
+        sb.add(new Participant(2,"test",20));
 
+        sb.add(new Participant(3,"tests",34));
+        sb.add(new Participant(1,"tests",34));
+        sb.add(new Participant(6,"tests",34));
+        sb.add(new Participant(2,"tests",34));
+        sb.add(new Participant(56,"tests",19));
+        sb.add(new Participant(7,"tests",19));
+        sb.add(new Participant(80,"tests",19));
+        sb.get(10);
+        print(l);
 
+    }**/
 }
 
 
