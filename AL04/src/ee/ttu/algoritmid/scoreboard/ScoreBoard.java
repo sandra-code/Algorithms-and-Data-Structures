@@ -20,9 +20,10 @@ public class ScoreBoard {
 
      */
     public List<Participant> get(int n) {
+        int m =n;
         Iterator<Participant> value = set.iterator();
         int start = 0;
-        while(start<n && value.hasNext()){
+        while(start<m && value.hasNext()){
             Participant p = value.next();
             l.add(p);
             start++;
