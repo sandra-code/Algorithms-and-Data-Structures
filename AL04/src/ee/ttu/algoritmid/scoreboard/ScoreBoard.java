@@ -21,9 +21,6 @@ public class ScoreBoard {
 
      */
     public List<Participant> get(int n) {
-        if(n>l.size()){
-            n=l.size();
-        }
         Iterator<Participant> value = set.iterator();
         int start = 0;
         while(start<n && value.hasNext()){
