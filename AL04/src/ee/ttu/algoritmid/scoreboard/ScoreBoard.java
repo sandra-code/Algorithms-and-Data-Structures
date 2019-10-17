@@ -5,7 +5,7 @@ import java.util.*;
 public class ScoreBoard {
 
     TreeSet<Participant> set= new TreeSet<>(new PartipComparator());
-    static List<Participant> l = new ArrayList<Participant>();
+     List<Participant> l = new ArrayList<Participant>();
 
     /**
      * Adds a participant's time to the checkpoint scoreboard
