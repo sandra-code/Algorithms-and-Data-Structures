@@ -57,24 +57,22 @@ public class AL06 {
          * (some tests only check for number of nodes)
          */
         public SimpleEntry<Integer, List<Integer>> breadthFirstSearch(Integer start, Integer goal) {
-            SimpleEntry<Integer, List<Integer>> test= new SimpleEntry<Integer, List<Integer>>(0,null);
+            SimpleEntry<Integer, List<Integer>> test= new SimpleEntry<Integer, List<Integer>>(null,null);
             LinkedList<Integer> q = new LinkedList<Integer>();
             LinkedList<Integer> visited = new LinkedList<>();
             q.add(start);
             visited.add(start);
-            if(start==goal){
-                return test;
-            }
             while (!q.isEmpty()) {
-                Integer v = q.poll();
+                Integer v = q.remove();
                 if(v.equals(goal)){
-                    break;
+                    test = new SimpleEntry<>(visited.size(),null);
+                    return test;
                 }
                 else{
                 q.addAll(this.getGraph().get(v));
-                visited.add(v);
+            }visited.add(v);
 
-            }}
+            }
             test = new SimpleEntry<>(visited.size(),visited);
             return test;
         }
