@@ -5,7 +5,7 @@ import java.util.AbstractMap.SimpleEntry;
 
 public class AL06 {
     public UndirectedGraph graph = new UndirectedGraph();
-
+        int count=0;
     private class UndirectedGraph {
         private HashMap<Integer, List<Integer>> graph = new HashMap<Integer, List<Integer>>();
 
@@ -65,15 +65,14 @@ public class AL06 {
             while (!q.isEmpty()) {
                 Integer v = q.remove();
                 if(v.equals(goal)){
-                    test = new SimpleEntry<>(visited.size(),null);
-                    return test;
+                    break;
                 }
                 else{
                 q.addAll(this.getGraph().get(v));
             }visited.add(v);
 
             }
-            test = new SimpleEntry<>(visited.size(),visited);
+            test = new SimpleEntry<>(count,visited);
             return test;
         }
     }
@@ -96,6 +95,7 @@ public class AL06 {
             Integer start = friends.get(i).getKey();
             Integer end = friends.get(i).getValue();
             graph.addEdge(start, end);
+            count++;
         }
         return graph.breadthFirstSearch(pair.getKey(), pair.getValue());
     }
