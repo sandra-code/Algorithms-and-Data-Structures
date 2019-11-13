@@ -5,7 +5,6 @@ import java.util.AbstractMap.SimpleEntry;
 
 public class AL06 {
     public UndirectedGraph graph = new UndirectedGraph();
-        int count=0;
     private class UndirectedGraph {
         private HashMap<Integer, List<Integer>> graph = new HashMap<Integer, List<Integer>>();
 
@@ -57,7 +56,7 @@ public class AL06 {
          * (some tests only check for number of nodes)
          */
         public SimpleEntry<Integer, List<Integer>> breadthFirstSearch(Integer start, Integer goal) {
-            SimpleEntry<Integer, List<Integer>> test= new SimpleEntry<Integer, List<Integer>>(null,null);
+            SimpleEntry<Integer, List<Integer>> test;
             LinkedList<Integer> q = new LinkedList<Integer>();
             LinkedList<Integer> visited = new LinkedList<>();
             q.add(start);
@@ -72,7 +71,7 @@ public class AL06 {
             }visited.add(v);
 
             }
-            test = new SimpleEntry<>(count,visited);
+            test = new SimpleEntry<>(q.size(),null);
             return test;
         }
     }
@@ -95,7 +94,7 @@ public class AL06 {
             Integer start = friends.get(i).getKey();
             Integer end = friends.get(i).getValue();
             graph.addEdge(start, end);
-            count++;
+
         }
         return graph.breadthFirstSearch(pair.getKey(), pair.getValue());
     }
