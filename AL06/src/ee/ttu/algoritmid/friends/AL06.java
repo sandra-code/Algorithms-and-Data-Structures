@@ -62,9 +62,9 @@ public class AL06 {
             q.add(start);
             visited.add(start);
             while (!q.isEmpty()) {
-                Integer v = q.poll();
-                test = new SimpleEntry<>(v, visited);
+                Integer v = q.remove();
                 if (v.equals(goal)) {
+                    test = new SimpleEntry<>(v, visited);
                     return test;
                 }
                 for(int x : getGraph().get(v)){
@@ -74,6 +74,7 @@ public class AL06 {
                     }
                 }
             }
+            test = new SimpleEntry<>(q.size(), visited);
             return test;
         }
     }
@@ -92,7 +93,7 @@ public class AL06 {
     public SimpleEntry<Integer, List<Integer>> buildGraphAndFindLink(List<SimpleEntry<Integer, Integer>> friends, SimpleEntry<Integer, Integer> pair) {
 
 
-        for (int i = 0; i < friends.size()-1; i++) {
+        for (int i = 0; i < friends.size(); i++) {
             Integer start = friends.get(i).getKey();
             Integer end = friends.get(i).getValue();
             graph.addEdge(start, end);
