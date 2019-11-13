@@ -63,7 +63,7 @@ public class AL06 {
             while (!q.isEmpty()) {
                 Integer v = q.poll();
                 if(!visited.contains(v)){
-                    q.addAll(getGraph().get(v));
+                    q.addAll(this.getGraph().get(v));
                     visited.add(v);
                 }
             }
