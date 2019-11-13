@@ -9,11 +9,20 @@ public class SubtreeSum {
      * @return root node of the tree where for every node is computed sum of it's all left children
      */
     public Node calculateLeftSums(Node rootNode) {
+        long sumOfAllLeft = 0;
+        long sumOfAllChildren = 0;
 
-        // TODO: your logic goes here
+        if(rootNode == null) {
+            rootNode.setValue(0);
+            return rootNode;
+        }
+        sumOfAllLeft+=rootNode.getLeft().getValue();
+        sumOfAllLeft+=rootNode.getRight().getValue();
+        rootNode.setSumOfAllLeft(sumOfAllLeft);
 
         return rootNode;
     }
+
 
     public static void main(String[] args) throws Exception {
         /**
@@ -42,7 +51,6 @@ public class SubtreeSum {
 
         SubtreeSum solution = new SubtreeSum();
         solution.calculateLeftSums(rootNode);
-
         if (rootNode.getSumOfAllLeft() != 26 ||
                 a.getSumOfAllLeft() != 3 ||
                 b.getSumOfAllLeft() != 5 ||
