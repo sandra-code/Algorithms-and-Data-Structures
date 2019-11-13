@@ -61,10 +61,9 @@ public class AL06 {
             HashSet<Integer> visited = new HashSet<Integer>();
             q.add(start);
             while (!q.isEmpty()) {
-                Integer v = q.poll();
-                if(!visited.contains(v)){
-                    q.addAll(this.getGraph().get(v));
-                    visited.add(v);
+                if(!visited.contains(goal)){
+                    q.addAll(this.getGraph().get(goal));
+                    visited.add(goal);
                 }
             }
 
