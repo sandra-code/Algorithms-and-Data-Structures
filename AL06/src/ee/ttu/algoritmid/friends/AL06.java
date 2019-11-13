@@ -68,12 +68,15 @@ public class AL06 {
             while (!q.isEmpty()) {
                 Integer v = q.poll();
                 if(v.equals(goal)){
+                    break;
                 }
                 else{
                 q.addAll(this.getGraph().get(v));
                 visited.add(v);
+
             }}
-            return test = new SimpleEntry<>(visited.size(),visited);
+            test = new SimpleEntry<>(visited.size(),visited);
+            return test;
         }
     }
 
