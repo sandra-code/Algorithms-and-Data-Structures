@@ -5,7 +5,7 @@ import java.util.AbstractMap.SimpleEntry;
 
 public class AL06 {
     public UndirectedGraph graph = new UndirectedGraph();
-    public int count=0;
+    public int count = 0;
 
     private class UndirectedGraph {
         private HashMap<Integer, List<Integer>> graph = new HashMap<Integer, List<Integer>>();
@@ -58,15 +58,24 @@ public class AL06 {
          * (some tests only check for number of nodes)
          */
         public SimpleEntry<Integer, List<Integer>> breadthFirstSearch(Integer start, Integer goal) {
-             int vertices;
-             LinkedList<Integer> adjLists[];
-             boolean visited[];
+            int innercount=0;
+            boolean[] visited = new boolean[count];
+            List q = new LinkedList();
+            visited[start] = true;
+            q.add(start);
+            HashMap<Integer, List<Integer>> graaf = getGraph();
+            while (!q.isEmpty()) {
+                for (int i : graaf.get(start)) {
+                    if (!visited[i]) {
+                        innercount++;
+                        visited[i] = true;
+                        q.add(i);
+                    }
+                }
+            }
+            SimpleEntry<Integer, List<Integer>> test= new SimpleEntry<Integer, List<Integer>>(innercount,q);
 
-             vertices=count;
-             visited = new boolean[vertices];
-             adjLists=new LinkedList[vertices];
-
-            return null;
+            return test;
         }
     }
 
@@ -85,13 +94,11 @@ public class AL06 {
 
 
         for (int i = 0; i < friends.size(); i++) {
-            Integer start= friends.get(i).getKey();
-            Integer end =friends.get(i).getValue();
-            graph.addEdge(start,end);
+            Integer start = friends.get(i).getKey();
+            Integer end = friends.get(i).getValue();
+            graph.addEdge(start, end);
             count++;
         }
-        graph.breadthFirstSearch(pair.getKey(), pair.getValue());
-
-        return null;
+        return graph.breadthFirstSearch(pair.getKey(), pair.getValue());
     }
 }
