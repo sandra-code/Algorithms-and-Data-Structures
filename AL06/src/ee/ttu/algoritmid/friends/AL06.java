@@ -5,7 +5,6 @@ import java.util.AbstractMap.SimpleEntry;
 
 public class AL06 {
     public UndirectedGraph graph = new UndirectedGraph();
-    public int count = 0;
 
     private class UndirectedGraph {
         private HashMap<Integer, List<Integer>> graph = new HashMap<Integer, List<Integer>>();
@@ -58,22 +57,19 @@ public class AL06 {
          * (some tests only check for number of nodes)
          */
         public SimpleEntry<Integer, List<Integer>> breadthFirstSearch(Integer start, Integer goal) {
-            int innercount=0;
-            boolean[] visited = new boolean[count];
-            List q = new LinkedList();
-            visited[start] = true;
+            LinkedList<Integer> q = new LinkedList<Integer>();
+            HashSet<Integer> visited = new HashSet<Integer>();
             q.add(start);
-            HashMap<Integer, List<Integer>> graaf = getGraph();
             while (!q.isEmpty()) {
-                for (int i : graaf.get(start)) {
-                    if (!visited[i]) {
-                        innercount++;
-                        visited[i] = true;
-                        q.add(i);
-                    }
+                Integer v = q.poll();
+                if(!visited.contains(v)){
+                    q.addAll(getGraph().get(v));
+                    visited.add(v);
                 }
             }
-            SimpleEntry<Integer, List<Integer>> test= new SimpleEntry<Integer, List<Integer>>(innercount,q);
+
+
+            SimpleEntry<Integer, List<Integer>> test= new SimpleEntry<Integer, List<Integer>>(q.size(),q);
 
             return test;
         }
@@ -97,7 +93,6 @@ public class AL06 {
             Integer start = friends.get(i).getKey();
             Integer end = friends.get(i).getValue();
             graph.addEdge(start, end);
-            count++;
         }
         return graph.breadthFirstSearch(pair.getKey(), pair.getValue());
     }
