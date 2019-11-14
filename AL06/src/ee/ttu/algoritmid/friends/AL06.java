@@ -66,10 +66,9 @@ public class AL06 {
 
                 if (v.equals(goal)) {
                     visited.add(v);
-                    test = new SimpleEntry<>(visited.size(), null);
+
                     break;
                 }
-                else{
 
                 for(int x : getGraph().get(v)){
                     if(!visited.contains(x)){
@@ -78,7 +77,8 @@ public class AL06 {
                         visited.add(x);
                     }
                 }
-            }}
+            }
+            test = new SimpleEntry<>(visited.size(), null);
             return test;
         }
     }
