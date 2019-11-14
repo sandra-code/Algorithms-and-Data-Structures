@@ -62,7 +62,8 @@ public class AL06 {
             q.add(start);
             visited.add(start);
             while (!q.isEmpty()) {
-                Integer v = q.remove();
+                Integer v = q.poll();
+
                 if (v.equals(goal)) {
                     test = new SimpleEntry<>(v, visited);
                     return test;
@@ -71,10 +72,11 @@ public class AL06 {
                     if(!visited.contains(x)){
                         visited.add(x);
                         q.add(x);
+                        visited.add(x);
                     }
                 }
             }
-            test = new SimpleEntry<>(q.size(), visited);
+            test = new SimpleEntry<>(visited.size(), visited);
             return test;
         }
     }
