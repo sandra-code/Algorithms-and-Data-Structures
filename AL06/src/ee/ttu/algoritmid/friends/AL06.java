@@ -84,8 +84,7 @@ public class AL06 {
                 }
             }
             if(start!=goal){
-                test= new SimpleEntry<Integer, List<Integer>>(null,null);
-                return test;
+                return null;
             }
             for (Integer ver = goal; ver!= null; ver = prev.get(ver)){
                 pathList.add(ver);
