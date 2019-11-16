@@ -85,7 +85,7 @@ public class AL06 {
                 }
             }
             LinkedList array = (LinkedList) Arrays.asList(dist);
-            SimpleEntry<Integer, List<Integer>> test= new SimpleEntry<, List<Integer>>(0,null);
+            SimpleEntry<Integer, List<Integer>> test= new SimpleEntry<Integer, List<Integer>>(0,null);
             return test;
 
         }
