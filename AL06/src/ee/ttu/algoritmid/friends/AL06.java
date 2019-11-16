@@ -59,30 +59,26 @@ public class AL06 {
          */
         public SimpleEntry<Integer, List<Integer>> breadthFirstSearch(Integer start, Integer goal) {
             int n=0;
-            boolean visited[] = new boolean[n];
+            LinkedList<Integer> visited = new LinkedList<>();
             Integer[] previous = new Integer[0];
             Integer[] dist = new Integer[0];
             LinkedList<Integer> queue = new LinkedList();
-            for (Integer v: people) {
-                visited[v]=false;
-                previous[v] = 0;
-            }
-            visited[start]=true;
+
+            visited.add(start);
             dist[start]=0;
             queue.add(start);
 
             while(queue.size() != 0){
                 Integer v = queue.poll();
                 for (Integer neighbour:getGraph().get(v)) {
-                    if(visited[neighbour] =false){
-                        visited[neighbour]=true;
+                    if(!visited.contains(neighbour)){
+                        visited.add(neighbour);
                         previous[neighbour]=v;
                         dist[neighbour]=dist[v]+1;
                         queue.add(neighbour);
                     }
                 }
             }
-            LinkedList array = (LinkedList) Arrays.asList(dist);
             SimpleEntry<Integer, List<Integer>> test= new SimpleEntry<Integer, List<Integer>>(0,null);
             return test;
 
