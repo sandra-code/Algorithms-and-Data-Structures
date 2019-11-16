@@ -77,9 +77,14 @@ public class AL06 {
      */
     public SimpleEntry<Integer, List<Integer>> buildGraphAndFindLink(List<SimpleEntry<Integer, Integer>> friends,
                                                                      SimpleEntry<Integer, Integer> pair) {
+        for (int i = 0; i < friends.size(); i++) {
+            Integer start = friends.get(i).getKey();
+            Integer end = friends.get(i).getValue();
+            graph.addEdge(start, end);
 
-        // TODO
 
-        return null;
+        }
+        return graph.breadthFirstSearch(pair.getKey(), pair.getValue());
+
     }
 }
