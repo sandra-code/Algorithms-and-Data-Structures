@@ -67,7 +67,6 @@ public class AL06 {
             for (Integer v: people) {
                 visited[v]=false;
                 previous[v] = -1;
-                dist[v]=Integer.MAX_VALUE;
             }
             visited[start]=true;
             dist[start]=0;
