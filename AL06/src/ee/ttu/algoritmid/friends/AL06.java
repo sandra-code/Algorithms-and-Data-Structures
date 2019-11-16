@@ -65,7 +65,7 @@ public class AL06 {
             LinkedList<Integer> queue = new LinkedList();
             for (Integer v: people) {
                 visited[v]=false;
-                previous[v] = -1;
+                previous[v] = 0;
             }
             visited[start]=true;
             dist[start]=0;
