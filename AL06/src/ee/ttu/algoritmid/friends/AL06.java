@@ -1,13 +1,11 @@
 package ee.ttu.algoritmid.friends;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.AbstractMap.SimpleEntry;
 
 public class AL06 {
     public UndirectedGraph graph = new UndirectedGraph();
-    LinkedList<Integer> people = new LinkedList();
-    int n;
+    public LinkedList<Integer> people = new LinkedList();
 
     private class UndirectedGraph {
         private HashMap<Integer, List<Integer>> graph = new HashMap<Integer, List<Integer>>();
@@ -60,6 +58,7 @@ public class AL06 {
          * (some tests only check for number of nodes)
          */
         public SimpleEntry<Integer, List<Integer>> breadthFirstSearch(Integer start, Integer goal) {
+            int n=0;
             boolean visited[] = new boolean[n];
             Integer[] previous = new Integer[0];
             Integer[] dist = new Integer[0];
