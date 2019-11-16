@@ -1,10 +1,14 @@
 package ee.ttu.algoritmid.friends;
 
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.AbstractMap.SimpleEntry;
 
 public class AL06 {
     public UndirectedGraph graph = new UndirectedGraph();
+    LinkedList<Integer> people = new LinkedList();
+    int n;
+
     private class UndirectedGraph {
         private HashMap<Integer, List<Integer>> graph = new HashMap<Integer, List<Integer>>();
 
@@ -56,31 +60,36 @@ public class AL06 {
          * (some tests only check for number of nodes)
          */
         public SimpleEntry<Integer, List<Integer>> breadthFirstSearch(Integer start, Integer goal) {
-            SimpleEntry<Integer, List<Integer>> test= new SimpleEntry<>(null,null);
-            LinkedList<Integer> q = new LinkedList<Integer>();
-            LinkedList<Integer> visited = new LinkedList<>();
-            q.add(start);
-            visited.add(start);
-            while (!q.isEmpty()) {
-                Integer v = q.poll();
+            boolean visited[] = new boolean[n];
+            Integer[] previous = new Integer[0];
+            Integer[] dist = new Integer[0];
+            LinkedList<Integer> queue = new LinkedList();
+            for (Integer v: people) {
+                visited[v]=false;
+                previous[v] = -1;
+                dist[v]=Integer.MAX_VALUE;
+            }
+            visited[start]=true;
+            dist[start]=0;
+            queue.add(start);
 
-                if (v.equals(goal)) {
-                    visited.add(v);
-
-                    break;
-                }
-
-                for(int x : getGraph().get(v)){
-                    if(!visited.contains(x)){
-                        visited.add(x);
-                        q.add(x);
-                        visited.add(x);
+            while(queue.size() != 0){
+                Integer v = queue.poll();
+                for (Integer neighbour:getGraph().get(v)) {
+                    if(visited[neighbour] =false){
+                        visited[neighbour]=true;
+                        previous[neighbour]=v;
+                        dist[neighbour]=dist[v]+1;
+                        queue.add(neighbour);
                     }
                 }
             }
-            test = new SimpleEntry<>(visited.size(), null);
+            LinkedList array = (LinkedList) Arrays.asList(dist);
+            SimpleEntry<Integer, List<Integer>> test= new SimpleEntry<, List<Integer>>(0,null);
             return test;
+
         }
+
     }
 
     /**
@@ -96,11 +105,12 @@ public class AL06 {
      */
     public SimpleEntry<Integer, List<Integer>> buildGraphAndFindLink(List<SimpleEntry<Integer, Integer>> friends, SimpleEntry<Integer, Integer> pair) {
 
-
         for (int i = 0; i < friends.size(); i++) {
             Integer start = friends.get(i).getKey();
             Integer end = friends.get(i).getValue();
             graph.addEdge(start, end);
+            people.add(i);
+
 
         }
         return graph.breadthFirstSearch(pair.getKey(), pair.getValue());
