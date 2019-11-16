@@ -91,7 +91,7 @@ public class AL06 {
                 pathList.add(ver);
             }
             Collections.reverse(pathList);
-            test = new SimpleEntry<Integer, List<Integer>>(pathList.size(),null);
+            test = new SimpleEntry<Integer, List<Integer>>(pathList.size(),pathList);
             return test;
         }
     }
