@@ -5,7 +5,6 @@ import java.util.AbstractMap.SimpleEntry;
 
 public class AL06 {
     public UndirectedGraph graph = new UndirectedGraph();
-    public LinkedList<Integer> people = new LinkedList();
 
     private class UndirectedGraph {
         private HashMap<Integer, List<Integer>> graph = new HashMap<Integer, List<Integer>>();
@@ -58,30 +57,39 @@ public class AL06 {
          * (some tests only check for number of nodes)
          */
         public SimpleEntry<Integer, List<Integer>> breadthFirstSearch(Integer start, Integer goal) {
-            int n=0;
-            LinkedList<Integer> visited = new LinkedList<>();
-            Integer[] previous = new Integer[0];
-            Integer[] dist = new Integer[0];
-            LinkedList<Integer> queue = new LinkedList();
+            SimpleEntry<Integer, List<Integer>> test;
+            LinkedList<Integer> pathList = new LinkedList<>();
+            Queue<Integer> queue = new LinkedList();
+            LinkedList<Integer> visited = new LinkedList();
+            Map<Integer, Integer> prev = new HashMap<>();
 
-            visited.add(start);
-            dist[start]=0;
             queue.add(start);
+            visited.add(start);
 
-            while(queue.size() != 0){
-                Integer v = queue.poll();
-                for (Integer neighbour:getGraph().get(v)) {
-                    if(!visited.contains(neighbour)){
-                        visited.add(neighbour);
-                        previous[neighbour]=v;
-                        dist[neighbour]=dist[v]+1;
-                        queue.add(neighbour);
+            while(!queue.isEmpty()){
+                start = queue.poll();
+                if(start == goal){
+                    break;
+                }
+                else{
+                    List<Integer> neighbours = getGraph().get(start);
+                    for(Integer n: neighbours){
+                        if(!visited.contains(n)){
+                            queue.add(n);
+                            visited.add(n);
+                            prev.put(n,start);
+                        }
                     }
                 }
             }
-            SimpleEntry<Integer, List<Integer>> test= new SimpleEntry<Integer, List<Integer>>(0,null);
-            return test;
-
+            if(start!=goal){
+                return test= new SimpleEntry<Integer, List<Integer>>(null,null);
+            }
+            for (Integer ver = goal; ver!= null; ver = prev.get(ver)){
+                pathList.add(ver);
+            }
+            Collections.reverse(pathList);
+            return test = new SimpleEntry<Integer, List<Integer>>(pathList.size(),null);
         }
 
     }
@@ -103,7 +111,6 @@ public class AL06 {
             Integer start = friends.get(i).getKey();
             Integer end = friends.get(i).getValue();
             graph.addEdge(start, end);
-            people.add(i);
 
 
         }
