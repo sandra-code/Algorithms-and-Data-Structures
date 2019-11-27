@@ -1,14 +1,32 @@
 package ee.ttu.algoritmid.interestingstamps;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class InterestingStamps {
 
     public static List<Integer> findStamps(int sum, List<Integer> stampOptions) throws IllegalArgumentException {
         if(sum==0){
-            return null;
+            return stampOptions;
         }
+        List<Integer> finalstamps = new ArrayList<>();
+        Collections.sort(stampOptions, Collections.reverseOrder());
+        int index = 0;
+
+        while (index < stampOptions.size()) {
+            if(sum >= stampOptions.get(index) ) {
+                finalstamps.add(stampOptions.get(index));
+                sum = sum - stampOptions.get(index);
+            } else {
+                index++;
+            }
+        }
+        return finalstamps;
+
+        /*
+
         if(stampOptions==null){
             return null;
         }
@@ -16,7 +34,7 @@ public class InterestingStamps {
             return stampOptions;
         }
         return findStamps(sum-stampOptions.size()-1, stampOptions);
-
+          */
     }
 
     public static void main(String[] args) {
