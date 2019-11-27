@@ -7,10 +7,9 @@ public class InterestingStamps {
     public static List<Integer> findStamps(int sum, List<Integer> stampOptions) throws IllegalArgumentException {
         List<Integer> finalstamps = stampOptions;
         if(sum==0){
-            return null;
+            throw  new IllegalAccessException;
         }
         
         return finalstamps;
-        //Väljundiks on markide nimiväärtuste list, mille summa on etteantud summa ja kogus minimaalne
     }
 }
