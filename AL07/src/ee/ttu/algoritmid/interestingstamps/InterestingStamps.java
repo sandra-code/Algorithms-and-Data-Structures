@@ -8,19 +8,17 @@ import java.util.List;
 public class InterestingStamps {
 
     public static List<Integer> findStamps(int sum, List<Integer> stampOptions) throws IllegalArgumentException {
-        if(sum==0){
-            return stampOptions;
-        }
+
         List<Integer> finalstamps = new ArrayList<>();
         Collections.sort(stampOptions, Collections.reverseOrder());
-        int index = 0;
+        int i = 0;
 
-        while (index < stampOptions.size()) {
-            if(sum >= stampOptions.get(index) ) {
-                finalstamps.add(stampOptions.get(index));
-                sum = sum - stampOptions.get(index);
+        while (i < stampOptions.size()) {
+            if(sum >= stampOptions.get(i) ) {
+                finalstamps.add(stampOptions.get(i));
+                sum = sum - stampOptions.get(i);
             } else {
-                index++;
+                i++;
             }
         }
         return finalstamps;
