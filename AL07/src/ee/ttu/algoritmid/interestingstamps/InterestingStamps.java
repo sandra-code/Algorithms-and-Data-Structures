@@ -12,7 +12,6 @@ public class InterestingStamps {
         if(stampOptions==null){
             return null;
         }
-
         if(stampOptions.size()-1>sum){
             return stampOptions;
         }
