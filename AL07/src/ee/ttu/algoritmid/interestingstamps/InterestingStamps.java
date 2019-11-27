@@ -11,16 +11,7 @@ public class InterestingStamps {
 
         List<Integer> finalstamps = new ArrayList<>();
         Collections.sort(stampOptions, Collections.reverseOrder());
-        int i = 0;
 
-        while (i < stampOptions.size()) {
-            if(sum >= stampOptions.get(i) ) {
-                finalstamps.add(stampOptions.get(i));
-                sum = sum - stampOptions.get(i);
-            } else {
-                i++;
-            }
-        }
         return finalstamps;
 
         /*
