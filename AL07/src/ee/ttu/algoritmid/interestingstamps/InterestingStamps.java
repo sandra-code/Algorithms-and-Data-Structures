@@ -31,8 +31,6 @@ public class InterestingStamps {
         given_stamps.add(33);
         given_stamps.add(36);
 
-
-
         System.out.println(testclass.findStamps(sum, given_stamps));
     }
 }
