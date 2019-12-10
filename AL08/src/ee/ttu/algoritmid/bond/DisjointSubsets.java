@@ -42,10 +42,4 @@ public class DisjointSubsets {
             objectsToNodes.put(element, new Node(element, 0));
         }
     }
-
-    public void toList(List<String> list) {
-        list.addAll(objectsToNodes.keySet());
-    }
-
-
 }
