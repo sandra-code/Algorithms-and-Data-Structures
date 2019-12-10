@@ -17,6 +17,19 @@ public class DisjointSubsets {
 
     public void union(String element1, String element2) throws IllegalArgumentException {
         // should throw IllegalArgumentException if any of elements is not present
+        //Pseudocode:
+        //Union(i,j)
+        //i_id <- Find(i)
+        //i_id <- Find(j)
+        //if i_id = j_id:
+        //  return
+        //if rank[i_id]>rank[j_id]:
+        //      parent[j_id]<-i_id
+        //else:
+        //      parent[i_id]<-j_id
+        //      if rank[i_id] = rank[j_id]:
+        //          rank[j_id]<- rank[j_id] + 1
+
         Object setX = find(element1);
         Object setY = find(element2);
         if (setX == null || setY == null || setX == setY)
