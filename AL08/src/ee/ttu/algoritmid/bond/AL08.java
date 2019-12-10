@@ -17,6 +17,7 @@ public class AL08 {
     }
 
     public void talkedToEachOther(String name1, String name2) {
+        //union kasutamine
     }
 
     public void addPerson(String name) {
@@ -32,9 +33,11 @@ public class AL08 {
     }
 
     public void friendly(String name) {
+        //add to friendly subset
     }
 
     public void unfriendly(String name) {
+        //add to unfriendly subset
     }
 
     public Network memberOfNetwork(String name) {
