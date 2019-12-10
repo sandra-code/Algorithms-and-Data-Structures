@@ -34,9 +34,7 @@ public class AL08 {
             //on friendly
             friendly(name);
         }
-        else{
-            //on unknown
-        }
+
     }
 
     public void friendly(String name) {
