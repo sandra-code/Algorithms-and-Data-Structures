@@ -1,14 +1,10 @@
 package ee.ttu.algoritmid.bond;
 
-import com.sun.source.tree.Tree;
-
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeSet;
 
 public class DisjointSubsets {
-    private HashMap objectsToNodes = new HashMap();
+    private HashMap<String, Node> objectsToNodes = new HashMap<String, Node>();
     public String find(String element) throws IllegalArgumentException {
 
         // should throw IllegalArgumentException if the element is not present
@@ -20,7 +16,6 @@ public class DisjointSubsets {
         return node.parent.toString();
     }
 
-    // should throw IllegalArgumentException if any of elements is not present
     public void union(String element1, String element2) throws IllegalArgumentException {
         // should throw IllegalArgumentException if any of elements is not present
         Object setX = find(element1);
@@ -29,7 +24,6 @@ public class DisjointSubsets {
             return;
         Node nodeX = (Node) objectsToNodes.get(setX);
         Node nodeY = (Node) objectsToNodes.get(setY);
-        //join the two sets by pointing the root of one at the root of the other
         if (nodeX.count > nodeY.count) {
             nodeY.parent = element1;
         } else {
@@ -37,8 +31,6 @@ public class DisjointSubsets {
             if (nodeX.count == nodeY.count)
                 nodeY.count++;
         }
-
-
     }
 
     public void addSubset(String element) throws IllegalArgumentException {
