@@ -11,8 +11,8 @@ public class DisjointSubsets {
         if (node == null)
             throw new IllegalArgumentException();
         if (element != node.parent)
-            node.parent = find(node.parent.toString());
-        return node.parent.toString();
+            node.parent = find(node.parent);
+        return node.parent;
     }
 
     public void union(String element1, String element2) throws IllegalArgumentException {

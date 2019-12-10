@@ -30,22 +30,23 @@ public class AL08 {
             //on unfriendly
            unfriendly(name);
         }
-        if(name.equals("A")){
+        else if(name.equals("A")){
             //on friendly
             friendly(name);
         }
+
 
     }
 
     public void friendly(String name) {
         //add to friendly subset
-        disjointSubsets.union("A", name);
+        //disjointSubsets.union();
 
     }
 
     public void unfriendly(String name) {
         //add to unfriendly subset
-        disjointSubsets.union("U", name);
+        //disjointSubsets.union();
     }
 
     public Network memberOfNetwork(String name) {
