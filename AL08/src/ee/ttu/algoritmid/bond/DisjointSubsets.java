@@ -21,7 +21,7 @@ public class DisjointSubsets {
         Object setX = find(element1);
         Object setY = find(element2);
         if (setX == null || setY == null || setX == setY)
-            throw new IllegalArgumentException();
+           return;
         Node nodeX = (Node) objectsToNodes.get(setX);
         Node nodeY = (Node) objectsToNodes.get(setY);
         if (nodeX.count > nodeY.count) {
@@ -35,8 +35,12 @@ public class DisjointSubsets {
 
     public void addSubset(String element) throws IllegalArgumentException {
         // should throw IllegalArgumentException if the element is already present
-        objectsToNodes.put(element, new Node(element, 0));
-
+        if(objectsToNodes.containsKey(element)){
+            throw new IllegalArgumentException();
+        }
+        else {
+            objectsToNodes.put(element, new Node(element, 0));
+        }
     }
 
     public void toList(List<String> list) {
