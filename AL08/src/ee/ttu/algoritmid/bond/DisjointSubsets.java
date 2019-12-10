@@ -46,7 +46,7 @@ public class DisjointSubsets {
 
     public void addSubset(String element) throws IllegalArgumentException {
         // should throw IllegalArgumentException if the element is already present
-        if(objectsToNodes.containsValue(element)){
+        if(objectsToNodes.containsKey(element)){
             throw new IllegalArgumentException();
         }
         else {
