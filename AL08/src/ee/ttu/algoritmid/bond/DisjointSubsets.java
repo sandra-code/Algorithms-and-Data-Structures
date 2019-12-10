@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DisjointSubsets {
-    public HashMap<Object, Node> objectsToNodes = new HashMap<>();
+    public HashMap objectsToNodes = new HashMap();
     public String find(String element) throws IllegalArgumentException {
 
         // should throw IllegalArgumentException if the element is not present
@@ -39,7 +39,7 @@ public class DisjointSubsets {
 
     }
 
-    public void toList(List<Object> list) {
+    public void toList(List list) {
         list.addAll(objectsToNodes.keySet());
     }
 
