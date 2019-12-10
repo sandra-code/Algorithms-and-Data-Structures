@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DisjointSubsets {
-    public HashMap objectsToNodes = new HashMap();
+    public HashMap<String, Node> objectsToNodes = new HashMap<>();
     public String find(String element) throws IllegalArgumentException {
 
         // should throw IllegalArgumentException if the element is not present
         Node node = (Node) objectsToNodes.get(element);
         if (node == null)
-            return null;
+            throw new IllegalArgumentException();
         if (element != node.parent)
             node.parent = find(node.parent.toString());
         return node.parent.toString();
@@ -39,7 +39,7 @@ public class DisjointSubsets {
 
     }
 
-    public void toList(List<Node> list) {
+    public void toList(List<String> list) {
         list.addAll(objectsToNodes.keySet());
     }
 
