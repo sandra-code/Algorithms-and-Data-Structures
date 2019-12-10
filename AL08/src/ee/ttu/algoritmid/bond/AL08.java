@@ -20,8 +20,15 @@ public class AL08 {
     }
 
     public void addPerson(String name) {
-
-        disjointSubsets.addSubset(name);
+        if(name=="U"){
+            //on unfriendly
+        }
+        if(name=="A"){
+            //on friendly
+        }
+        else{
+            //on unknown
+        }
     }
 
     public void friendly(String name) {
