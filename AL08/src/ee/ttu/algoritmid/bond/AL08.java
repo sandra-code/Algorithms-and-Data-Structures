@@ -41,7 +41,14 @@ public class AL08 {
     }
 
     public Network memberOfNetwork(String name) {
-        return null;
+        String root = disjointSubsets.find(name); //tagastab root ehk parenti
+        if(root.equals("U")){
+            return Network.UNFRIENDLY;
+        }
+        else if(root.equals("A")){
+            return  Network.FRIENDLY;
+        }
+        else{ return Network.UNKNOWN;}
     }
 
 }
