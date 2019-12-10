@@ -21,7 +21,7 @@ public class DisjointSubsets {
         Object setX = find(element1);
         Object setY = find(element2);
         if (setX == null || setY == null || setX == setY)
-            return;
+            throw new IllegalArgumentException();
         Node nodeX = (Node) objectsToNodes.get(setX);
         Node nodeY = (Node) objectsToNodes.get(setY);
         if (nodeX.count > nodeY.count) {
