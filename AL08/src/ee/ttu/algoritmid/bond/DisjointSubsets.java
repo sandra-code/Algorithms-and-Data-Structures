@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DisjointSubsets {
-    private HashMap<String, Node> objectsToNodes = new HashMap<String, Node>();
+    public HashMap<String, Node> objectsToNodes = new HashMap<String, Node>();
     public String find(String element) throws IllegalArgumentException {
 
         // should throw IllegalArgumentException if the element is not present
