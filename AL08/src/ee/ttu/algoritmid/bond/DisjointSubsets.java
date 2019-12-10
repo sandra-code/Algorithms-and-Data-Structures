@@ -11,8 +11,8 @@ public class DisjointSubsets {
         Node node = (Node) objectsToNodes.get(element);
         if (node == null)
             return null;
-
-            node.parent = find(node.parent.toString());
+        if (element != node.parent)
+            node.parent = find(node.parent.toString();
         return node.parent.toString();
     }
 
@@ -39,7 +39,7 @@ public class DisjointSubsets {
 
     }
 
-    public void toList(List list) {
+    public void toList(List<Node> list) {
         list.addAll(objectsToNodes.keySet());
     }
 
