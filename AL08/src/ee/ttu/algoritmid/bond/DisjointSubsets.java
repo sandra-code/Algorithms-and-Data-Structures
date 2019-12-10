@@ -12,7 +12,7 @@ public class DisjointSubsets {
         if (node == null)
             return null;
         if (element != node.parent)
-            node.parent = find(node.parent.toString();
+            node.parent = find(node.parent.toString());
         return node.parent.toString();
     }
 
