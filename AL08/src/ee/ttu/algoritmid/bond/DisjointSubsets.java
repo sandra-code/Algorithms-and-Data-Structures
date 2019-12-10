@@ -1,14 +1,13 @@
 package ee.ttu.algoritmid.bond;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class DisjointSubsets {
     public HashMap<String, Node> objectsToNodes = new HashMap<>();
     public String find(String element) throws IllegalArgumentException {
 
         // should throw IllegalArgumentException if the element is not present
-        Node node = (Node) objectsToNodes.get(element);
+        Node node = objectsToNodes.get(element);
         if (node == null)
             throw new IllegalArgumentException();
         if (element != node.parent)
@@ -22,8 +21,8 @@ public class DisjointSubsets {
         Object setY = find(element2);
         if (setX == null || setY == null || setX == setY)
            return;
-        Node nodeX = (Node) objectsToNodes.get(setX);
-        Node nodeY = (Node) objectsToNodes.get(setY);
+        Node nodeX =  objectsToNodes.get(setX);
+        Node nodeY =  objectsToNodes.get(setY);
         if (nodeX.count > nodeY.count) {
             nodeY.parent = element1;
         } else {

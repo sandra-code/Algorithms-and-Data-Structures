@@ -20,10 +20,10 @@ public class AL08 {
     }
 
     public void addPerson(String name) {
-        if(name=="U"){
+        if(name.equals("U")){
             //on unfriendly
         }
-        if(name=="A"){
+        if(name.equals("A")){
             //on friendly
         }
         else{
