@@ -10,7 +10,7 @@ public class DisjointSubsets {
         // should throw IllegalArgumentException if the element is not present
         Node node = (Node) objectsToNodes.get(element);
         if (node == null) {
-            throw new IllegalArgumentException();
+            return null;
         }
             node.parent = find(node.parent.toString());
         return node.parent.toString();
