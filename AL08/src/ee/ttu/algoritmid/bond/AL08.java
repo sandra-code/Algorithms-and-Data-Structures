@@ -73,13 +73,18 @@ public class AL08 {
         al08.addPerson("U");
         al08.addPerson("Juku");
         al08.addPerson("Mari");
-        System.out.println(al08.memberOfNetwork("Juku"));
-        System.out.println(al08.memberOfNetwork("Mari"));
+        System.out.println("Juku lisamine: Juku staatus on "+al08.memberOfNetwork("Juku"));
+        System.out.println("Mari lisamine: Mari staatus on  "+al08.memberOfNetwork("Mari"));
         al08.addPerson("Tiit");
         al08.talkedToEachOther("A", "Tiit");
-        System.out.println(al08.memberOfNetwork("Tiit"));
-        al08.talkedToEachOther("Tiit", "Mari");
-        System.out.println(al08.memberOfNetwork("Mari"));
+        System.out.println("Pärast seda kui Tiit rääkis A-ga, Tiidu staatus  "+al08.memberOfNetwork("Tiit"));
+        al08.talkedToEachOther("Mari", "Tiit");
+        System.out.println("Pärast seda kui Tiit rääkis Mariga, Mari staatus "+al08.memberOfNetwork("Mari"));
+        al08.talkedToEachOther("U", "Juku");
+        System.out.println("Pärast seda kui U rääkis Jukuga, Juku staatus: "+al08.memberOfNetwork("Juku"));
+        al08.addPerson("Kalle");
+        al08.talkedToEachOther("Kalle", "Juku");
+        System.out.println("Pärast seda kui Juku rääkis Kallega, Kalle staatus: "+al08.memberOfNetwork("Kalle"));
 
     }
 
