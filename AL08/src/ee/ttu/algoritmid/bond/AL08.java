@@ -38,8 +38,6 @@ public class AL08 {
     }
 
     public void addPerson(String name) {
-        disjointSubsets.addSubset("U");
-        disjointSubsets.addSubset("A");
         disjointSubsets.addSubset(name);
     }
 
