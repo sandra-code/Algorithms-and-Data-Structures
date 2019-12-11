@@ -54,7 +54,7 @@ public class AL08 {
 
     public Network memberOfNetwork(String name) {
         String parent = disjointSubsets.find(name); //tagastab parenti ehk juure
-        if(parent.equals("U")){
+        if(memberOfNetwork(parent).equals(Network.UNFRIENDLY)){
             return Network.UNFRIENDLY;
         }
         else if(parent.equals("A")){
