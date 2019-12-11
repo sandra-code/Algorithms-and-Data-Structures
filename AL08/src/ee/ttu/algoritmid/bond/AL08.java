@@ -21,7 +21,7 @@ public class AL08 {
             if(name2.equals("A") || disjointSubsets.find(name2).equals("A")){
                 friendly(name1);
             }
-            else if(name2.equals("U")){
+            else if(name2.equals("U") || disjointSubsets.find(name2).equals("U")){
                 unfriendly(name1);
             }
         }
@@ -29,7 +29,7 @@ public class AL08 {
             if(name1.equals("A") || disjointSubsets.find(name1).equals("A")){
                 friendly(name2);
             }
-            else if(name1.equals("U")){
+            else if(name1.equals("U") || disjointSubsets.find(name2).equals("U")){
                 unfriendly(name2);
             }
         }
