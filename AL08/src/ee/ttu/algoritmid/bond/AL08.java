@@ -28,6 +28,11 @@ public class AL08 {
     }
 
     public void addPerson(String name) {
+
+        disjointSubsets.addSubset(name);
+
+
+        /*
         if(memberOfNetwork(name)==Network.UNFRIENDLY){
             //on unfriendly
             disjointSubsets.addSubset("U");
@@ -41,7 +46,7 @@ public class AL08 {
         else{
             disjointSubsets.addSubset(name);
         }
-
+*/
 
 
 
