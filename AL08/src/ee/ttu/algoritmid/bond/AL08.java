@@ -27,11 +27,11 @@ public class AL08 {
                 unfriendly(name1);
             }
         }
-        else if(memberOfNetwork(name2)==Network.UNKNOWN && memberOfNetwork(name1)!=Network.UNKNOWN){
+        else if(memberOfNetwork(name1)!=Network.UNKNOWN && memberOfNetwork(name2)==Network.UNKNOWN){
             if(name1.equals("A") || disjointSubsets.find(name1).equals("A")){
                 friendly(name2);
             }
-            else if(name1.equals("U") || disjointSubsets.find(name2).equals("U")){
+            else if(name1.equals("U") || disjointSubsets.find(name1).equals("U")){
                 unfriendly(name2);
             }
         }
@@ -99,7 +99,7 @@ public class AL08 {
 
         System.out.println("Kati lisamine: Kati staatus on "+al08.memberOfNetwork("Kati"));
         System.out.println("Mati lisamine: Mati staatus on  "+al08.memberOfNetwork("Mati"));
-        al08.talkedToEachOther("Kati","Mari");
+        al08.talkedToEachOther("Kati","Juku");
         System.out.println("Pärast seda Kati rääkis Mariga, Mati staatus on "+al08.memberOfNetwork("Mati"));
 
 
