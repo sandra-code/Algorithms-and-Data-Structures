@@ -31,14 +31,20 @@ public class DisjointSubsets {
         //          rank[j_id]<- rank[j_id] + 1
         Object setX = find(element1);
         Object setY = find(element2);
-        if (setX == null || setY == null || setX == setY)
+        if (setX == null || setY == null || setX==null && setY==null){
+            throw new IllegalArgumentException();
+        }
+        if(setX == setY){
             return;
+        }
+
         Node nodeX =  objectsToNodes.get(setX);
         Node nodeY =  objectsToNodes.get(setY);
         if (nodeX.count > nodeY.count) {
             nodeY.parent = element1;
 
-        } else {
+        }
+        else {
             nodeX.parent = element2;
             if (nodeX.count == nodeY.count)
                 nodeY.count++;
