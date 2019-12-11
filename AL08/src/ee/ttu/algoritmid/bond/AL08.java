@@ -68,4 +68,13 @@ public class AL08 {
 
     }
 
+
+    public static void main(String[] args) {
+        AL08 al08 = new AL08();
+        al08.addPerson("Juku");
+        al08.addPerson("Mari");
+        System.out.println(al08.memberOfNetwork("Juku"));
+        System.out.println(al08.memberOfNetwork("Mari"));
+    }
+
 }
