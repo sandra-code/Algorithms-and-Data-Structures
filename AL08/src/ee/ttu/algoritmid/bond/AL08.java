@@ -33,6 +33,9 @@ public class AL08 {
                 unfriendly(name2);
             }
         }
+        else{
+            disjointSubsets.union(name1, name2);
+        }
 
         //peab meelde jätma kellega on suheldud
     }
