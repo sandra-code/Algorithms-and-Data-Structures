@@ -45,15 +45,12 @@ public class AL08 {
     }
 
     public void addPerson(String name) {
-        if(name.equals("A")){
+        //System.out.println(disjointSubsets.objectsToNodes.size());
+        if (disjointSubsets.objectsToNodes.size()==0){
             disjointSubsets.addSubset("A");
-        }
-        else if(name.equals("U")){
             disjointSubsets.addSubset("U");
         }
-        else {
-            disjointSubsets.addSubset(name);
-        }
+        disjointSubsets.addSubset(name);
     }
 
     public void friendly(String name) {
@@ -84,8 +81,6 @@ public class AL08 {
 
     public static void main(String[] args) {
         AL08 al08 = new AL08();
-        al08.addPerson("A");
-        al08.addPerson("U");
         al08.addPerson("Juku");
         al08.addPerson("Mari");
         System.out.println("Juku lisamine: Juku staatus on "+al08.memberOfNetwork("Juku"));
