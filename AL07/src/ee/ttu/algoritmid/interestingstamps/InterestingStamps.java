@@ -8,22 +8,10 @@ import java.util.List;
 public class InterestingStamps {
 
     public static List<Integer> findStamps(int sum, List<Integer> stampOptions) throws IllegalArgumentException {
-
-        List<Integer> finalstamps = new ArrayList<>();
         Collections.sort(stampOptions, Collections.reverseOrder());
 
-        return finalstamps;
 
-        /*
-
-        if(stampOptions==null){
-            return null;
-        }
-        if(stampOptions.size()-1>sum){
-            return stampOptions;
-        }
-        return findStamps(sum-stampOptions.size()-1, stampOptions);
-          */
+        return null;
     }
 
     public static void main(String[] args) {

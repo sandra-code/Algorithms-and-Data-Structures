@@ -18,46 +18,52 @@ public class AL08 {
 
     public void talkedToEachOther(String name1, String name2) {
         if(memberOfNetwork(name1)==Network.UNKNOWN){
-            name1 = name2;
+            disjointSubsets.union(name1, name2);
         }
         else if(memberOfNetwork(name2)==Network.UNKNOWN){
-            name2 = name1;
+            disjointSubsets.union(name2, name1);
         }
+
+        //peab meelde jätma kellega on suheldud
     }
 
     public void addPerson(String name) {
-        if(name.equals("U")){
+        if(memberOfNetwork(name)==Network.UNFRIENDLY){
             //on unfriendly
            unfriendly(name);
         }
-        else if(name.equals("A")){
+        else if(memberOfNetwork(name)==Network.FRIENDLY){
             //on friendly
             friendly(name);
         }
+
+
 
 
     }
 
     public void friendly(String name) {
         //add to friendly subset
-        //disjointSubsets.union();
+        disjointSubsets.union(name);
 
     }
 
     public void unfriendly(String name) {
         //add to unfriendly subset
-        //disjointSubsets.union();
+        disjointSubsets.union(name);
     }
 
     public Network memberOfNetwork(String name) {
-        String root = disjointSubsets.find(name); //tagastab root ehk parenti
-        if(root.equals("U")){
+        String parent = disjointSubsets.find(name); //tagastab parenti ehk juure
+        if(parent.equals("U")){
             return Network.UNFRIENDLY;
         }
-        else if(root.equals("A")){
-            return  Network.FRIENDLY;
+        else if(parent.equals("A")){
+            return Network.FRIENDLY;
         }
-        else{ return Network.UNKNOWN;}
+        else{
+            return Network.UNKNOWN;
+        }
 
     }
 
