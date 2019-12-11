@@ -17,7 +17,7 @@ public class DisjointSubsets {
 
     public void union(String element1, String element2) throws IllegalArgumentException {
         // should throw IllegalArgumentException if any of elements is not present
-        //Pseudocode:
+        ///Pseudocode:
         //Union(i,j)
         //i_id <- Find(i)
         //i_id <- Find(j)
