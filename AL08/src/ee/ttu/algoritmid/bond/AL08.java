@@ -45,7 +45,7 @@ public class AL08 {
     }
 
     public void friendly(String name) {
-        //add to friendly subset
+        ///add to friendly subset
         disjointSubsets.union(name, "A");
 
     }
