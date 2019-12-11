@@ -45,9 +45,11 @@ public class AL08 {
     public void addPerson(String name) {
         if(name.equals("A")){
             disjointSubsets.addSubset("A");
+            friendly("A");
         }
         else if(name.equals("U")){
             disjointSubsets.addSubset("U");
+            unfriendly("U");
         }
         else {
             disjointSubsets.addSubset(name);
