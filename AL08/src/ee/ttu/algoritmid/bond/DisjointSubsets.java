@@ -46,9 +46,10 @@ public class DisjointSubsets {
         }
         else {
             nodeX.parent = element2;
-            if (nodeX.count == nodeY.count)
-                nodeY.count++;
+
         }
+        if (nodeX.count == nodeY.count)
+            nodeY.count++;
     }
 
     public void addSubset(String element) throws IllegalArgumentException {
