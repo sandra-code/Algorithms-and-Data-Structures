@@ -35,7 +35,7 @@ public class AL08 {
                 unfriendly(name2);
             }
         }
-        else{
+        else if(memberOfNetwork(name1)==Network.UNKNOWN && memberOfNetwork(name2)==Network.UNKNOWN){
             disjointSubsets.union(name1, name2);
         }
 
@@ -45,11 +45,9 @@ public class AL08 {
     public void addPerson(String name) {
         if(name.equals("A")){
             disjointSubsets.addSubset("A");
-            friendly("A");
         }
         else if(name.equals("U")){
             disjointSubsets.addSubset("U");
-            unfriendly("U");
         }
         else {
             disjointSubsets.addSubset(name);
