@@ -19,7 +19,7 @@ public class AL08 {
     }
 
     public void talkedToEachOther(String name1, String name2) {
-        if(memberOfNetwork(name1)==Network.UNKNOWN){
+        if(memberOfNetwork(name1)==Network.UNKNOWN && memberOfNetwork(name2)!=Network.UNKNOWN ){
             if(name2.equals("A") || disjointSubsets.find(name2).equals("A")){
                 friendly(name1);
             }
@@ -27,7 +27,7 @@ public class AL08 {
                 unfriendly(name1);
             }
         }
-        else if(memberOfNetwork(name2)==Network.UNKNOWN){
+        else if(memberOfNetwork(name2)==Network.UNKNOWN && memberOfNetwork(name2)!=Network.UNKNOWN){
             if(name1.equals("A") || disjointSubsets.find(name1).equals("A")){
                 friendly(name2);
             }
@@ -37,7 +37,10 @@ public class AL08 {
         }
         else if(memberOfNetwork(name1)==Network.UNKNOWN && memberOfNetwork(name2)==Network.UNKNOWN){
             disjointSubsets.union(name1, name2);
+            System.out.println("test");
         }
+
+
 
         //peab meelde jätma kellega on suheldud
     }
@@ -48,13 +51,13 @@ public class AL08 {
 
     public void friendly(String name) {
         ///add to friendly subset
-        disjointSubsets.union("A", name);
+        disjointSubsets.union(name, "A");
 
     }
 
     public void unfriendly(String name) {
         //add to unfriendly subset
-        disjointSubsets.union("U", name);
+        disjointSubsets.union(name,"U");
     }
 
     public Network memberOfNetwork(String name) {
@@ -93,7 +96,10 @@ public class AL08 {
         System.out.println("Siia peaks tulema U "+al08.disjointSubsets.find("Kalle"));
         al08.addPerson("Kati");
         al08.addPerson("Mati");
+        System.out.println("Kati ja Mati rääkimine:");
         al08.talkedToEachOther("Kati", "Mati");
+        System.out.println("Kati lisamine: Kati staatus on "+al08.memberOfNetwork("Kati"));
+        System.out.println("Mati lisamine: Mati staatus on  "+al08.memberOfNetwork("Mati"));
         al08.talkedToEachOther("Kati","Mari");
         System.out.println("Pärast seda Kati rääkis Mariga, Mati staatus  "+al08.memberOfNetwork("Mati"));
 
