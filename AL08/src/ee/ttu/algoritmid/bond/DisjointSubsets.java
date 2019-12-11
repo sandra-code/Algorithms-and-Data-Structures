@@ -9,7 +9,7 @@ public class DisjointSubsets {
         // should throw IllegalArgumentException if the element is not present
         Node node = objectsToNodes.get(element);
         if (node == null)
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("find");
         if (element != node.parent)
             node.parent = find(node.parent);
         return node.parent;
@@ -32,7 +32,7 @@ public class DisjointSubsets {
         Object setX = find(element1);
         Object setY = find(element2);
         if (setX == null || setY == null || setX==null && setY==null){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("union");
         }
         if(setX == setY){
             return;

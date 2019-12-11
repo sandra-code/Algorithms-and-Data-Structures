@@ -41,6 +41,8 @@ public class AL08 {
 
 
 
+
+
         //peab meelde jätma kellega on suheldud
     }
 
