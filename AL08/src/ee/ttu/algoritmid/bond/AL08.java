@@ -18,18 +18,18 @@ public class AL08 {
 
     public void talkedToEachOther(String name1, String name2) {
         if(memberOfNetwork(name1)==Network.UNKNOWN){
-            if(memberOfNetwork(name2)==Network.FRIENDLY){
+            if(name2.equals("A")){
                 friendly(name1);
             }
-            else if(memberOfNetwork(name2)==Network.UNFRIENDLY){
+            else if(name2.equals("U")){
                 unfriendly(name1);
             }
         }
         else if(memberOfNetwork(name2)==Network.UNKNOWN){
-            if(memberOfNetwork(name1)==Network.FRIENDLY){
+            if(name1.equals("A")){
                 friendly(name2);
             }
-            else if(memberOfNetwork(name1)==Network.UNFRIENDLY){
+            else if(name1.equals("U")){
                 unfriendly(name2);
             }
         }
@@ -69,10 +69,18 @@ public class AL08 {
 
     public static void main(String[] args) {
         AL08 al08 = new AL08();
+        al08.addPerson("A");
+        al08.addPerson("U");
         al08.addPerson("Juku");
         al08.addPerson("Mari");
         System.out.println(al08.memberOfNetwork("Juku"));
         System.out.println(al08.memberOfNetwork("Mari"));
+        al08.addPerson("Tiit");
+        al08.talkedToEachOther("A", "Tiit");
+        System.out.println(al08.memberOfNetwork("Tiit"));
+        al08.talkedToEachOther("Tiit", "Mari");
+        System.out.println(al08.memberOfNetwork("Mari"));
+
     }
 
 }
