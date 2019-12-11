@@ -91,8 +91,6 @@ public class AL08 {
         System.out.println("Pärast seda kui U rääkis Jukuga, Juku staatus: "+al08.memberOfNetwork("Juku"));
         al08.addPerson("Kati");
         al08.addPerson("Mati");
-        al08.addPerson("Liis");
-        al08.addPerson("Anna");
         System.out.println("Kati ja Mati rääkimine:");
         al08.talkedToEachOther("Kati", "Mati");
 
