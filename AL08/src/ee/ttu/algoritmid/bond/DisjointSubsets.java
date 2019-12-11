@@ -9,7 +9,7 @@ public class DisjointSubsets {
         // should throw IllegalArgumentException if the element is not present
         Node node = objectsToNodes.get(element);
         if (node == null)
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("test 2");
         if (element != node.parent)
             node.parent = find(node.parent);
         return node.parent;
@@ -47,7 +47,7 @@ public class DisjointSubsets {
     public void addSubset(String element) throws IllegalArgumentException {
         // should throw IllegalArgumentException if the element is already present
         if(objectsToNodes.containsKey(element)){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("test");
         }
         else {
             objectsToNodes.put(element, new Node(element, 0));
