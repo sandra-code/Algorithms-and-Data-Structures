@@ -18,10 +18,20 @@ public class AL08 {
 
     public void talkedToEachOther(String name1, String name2) {
         if(memberOfNetwork(name1)==Network.UNKNOWN){
-            disjointSubsets.union(name2, name1);
+            if(memberOfNetwork(name2)==Network.FRIENDLY){
+                friendly(name1);
+            }
+            else if(memberOfNetwork(name2)==Network.UNFRIENDLY){
+                unfriendly(name1);
+            }
         }
         else if(memberOfNetwork(name2)==Network.UNKNOWN){
-            disjointSubsets.union(name1, name2);
+            if(memberOfNetwork(name1)==Network.FRIENDLY){
+                friendly(name2);
+            }
+            else if(memberOfNetwork(name1)==Network.UNFRIENDLY){
+                unfriendly(name2);
+            }
         }
 
         //peab meelde jätma kellega on suheldud
