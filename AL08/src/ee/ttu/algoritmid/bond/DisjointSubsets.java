@@ -39,6 +39,7 @@ public class DisjointSubsets {
         Node nodeY =  objectsToNodes.get(setY);
         if (nodeX.count > nodeY.count) {
             nodeY.parent = element1;
+
         } else {
             nodeX.parent = element2;
             if (nodeX.count == nodeY.count)

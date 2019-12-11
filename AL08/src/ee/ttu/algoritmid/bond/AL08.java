@@ -27,7 +27,7 @@ public class AL08 {
                 unfriendly(name1);
             }
         }
-        else if(memberOfNetwork(name2)==Network.UNKNOWN && memberOfNetwork(name2)!=Network.UNKNOWN){
+        else if(memberOfNetwork(name2)==Network.UNKNOWN && memberOfNetwork(name1)!=Network.UNKNOWN){
             if(name1.equals("A") || disjointSubsets.find(name1).equals("A")){
                 friendly(name2);
             }
