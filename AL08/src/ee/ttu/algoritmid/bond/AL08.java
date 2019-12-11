@@ -1,5 +1,7 @@
 package ee.ttu.algoritmid.bond;
 
+import java.util.zip.DeflaterInputStream;
+
 public class AL08 {
 
     public enum Network {
@@ -41,8 +43,15 @@ public class AL08 {
     }
 
     public void addPerson(String name) {
-
-        disjointSubsets.addSubset(name);
+        if(name.equals("A")){
+            disjointSubsets.addSubset("A");
+        }
+        else if(name.equals("U")){
+            disjointSubsets.addSubset("U");
+        }
+        else {
+            disjointSubsets.addSubset(name);
+        }
     }
 
     public void friendly(String name) {
