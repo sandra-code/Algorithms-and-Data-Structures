@@ -30,12 +30,12 @@ public class AL08 {
     public void addPerson(String name) {
         if(memberOfNetwork(name)==Network.UNFRIENDLY){
             //on unfriendly
-            disjointSubsets.addSubset("A");
+            disjointSubsets.addSubset("U");
            unfriendly(name);
         }
         else if(memberOfNetwork(name)==Network.FRIENDLY){
             //on friendly
-            disjointSubsets.addSubset("U");
+            disjointSubsets.addSubset("A");
             friendly(name);
         }
         else{
