@@ -37,7 +37,6 @@ public class AL08 {
         }
         else if(memberOfNetwork(name1)==Network.UNKNOWN && memberOfNetwork(name2)==Network.UNKNOWN){
             disjointSubsets.union(name1, name2);
-            System.out.println("test");
         }
 
 
@@ -90,10 +89,6 @@ public class AL08 {
         System.out.println("Pärast seda kui Tiit rääkis Mariga, Mari staatus "+al08.memberOfNetwork("Mari"));
         al08.talkedToEachOther("U", "Juku");
         System.out.println("Pärast seda kui U rääkis Jukuga, Juku staatus: "+al08.memberOfNetwork("Juku"));
-        al08.addPerson("Kalle");
-        al08.talkedToEachOther("Kalle", "Juku");
-        System.out.println("Pärast seda kui Juku rääkis Kallega, Kalle staatus: "+al08.memberOfNetwork("Kalle"));
-        System.out.println("Siia peaks tulema U "+al08.disjointSubsets.find("Kalle"));
         al08.addPerson("Kati");
         al08.addPerson("Mati");
         System.out.println("Kati ja Mati rääkimine:");
@@ -101,7 +96,7 @@ public class AL08 {
         System.out.println("Kati lisamine: Kati staatus on "+al08.memberOfNetwork("Kati"));
         System.out.println("Mati lisamine: Mati staatus on  "+al08.memberOfNetwork("Mati"));
         al08.talkedToEachOther("Kati","Mari");
-        System.out.println("Pärast seda Kati rääkis Mariga, Mati staatus  "+al08.memberOfNetwork("Mati"));
+        System.out.println("Pärast seda Kati rääkis Mariga, Mati staatus on "+al08.memberOfNetwork("Mati"));
 
     }
 

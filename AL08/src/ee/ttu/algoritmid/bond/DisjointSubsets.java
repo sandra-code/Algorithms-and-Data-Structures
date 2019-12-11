@@ -31,8 +31,6 @@ public class DisjointSubsets {
         //          rank[j_id]<- rank[j_id] + 1
         Object setX = find(element1);
         Object setY = find(element2);
-        System.out.println(setX);
-        System.out.println(setY);
         if (setX == null || setY == null || setX == setY)
             return;
         Node nodeX =  objectsToNodes.get(setX);
