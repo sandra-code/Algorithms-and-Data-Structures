@@ -46,13 +46,13 @@ public class AL08 {
 
     public void friendly(String name) {
         //add to friendly subset
-        disjointSubsets.union(name, disjointSubsets.find("A"));
+        disjointSubsets.union(name, "A");
 
     }
 
     public void unfriendly(String name) {
         //add to unfriendly subset
-        disjointSubsets.union(name, disjointSubsets.find("U"));
+        disjointSubsets.union(name, "U");
     }
 
     public Network memberOfNetwork(String name) {
