@@ -38,6 +38,8 @@ public class AL08 {
     }
 
     public void addPerson(String name) {
+        disjointSubsets.addSubset("U");
+        disjointSubsets.addSubset("A");
         disjointSubsets.addSubset(name);
     }
 
@@ -54,7 +56,7 @@ public class AL08 {
 
     public Network memberOfNetwork(String name) {
         String parent = disjointSubsets.find(name); //tagastab parenti ehk juure
-        if(parent.equals(name)){
+        if(parent.equals("U")){
             return Network.UNFRIENDLY;
         }
         else if(parent.equals("A")){
