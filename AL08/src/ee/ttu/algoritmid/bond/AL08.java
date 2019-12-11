@@ -96,16 +96,11 @@ public class AL08 {
         System.out.println("Kati ja Mati rääkimine:");
         al08.talkedToEachOther("Kati", "Mati");
 
-        al08.talkedToEachOther("Liis", "Anna");
-        al08.talkedToEachOther("Liis", "Mati");
-
         System.out.println("Kati lisamine: Kati staatus on "+al08.memberOfNetwork("Kati"));
         System.out.println("Mati lisamine: Mati staatus on  "+al08.memberOfNetwork("Mati"));
         al08.talkedToEachOther("Kati","Mari");
         System.out.println("Pärast seda Kati rääkis Mariga, Mati staatus on "+al08.memberOfNetwork("Mati"));
 
-        System.out.println("Liis on  "+al08.memberOfNetwork("Liis"));
-        System.out.println("Anna on  "+al08.memberOfNetwork("Anna"));
 
     }
 
