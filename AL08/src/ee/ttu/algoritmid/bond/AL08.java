@@ -46,13 +46,13 @@ public class AL08 {
 
     public void friendly(String name) {
         //add to friendly subset
-        disjointSubsets.union(name, disjointSubsets.find("A"));
+        disjointSubsets.union(name, "A");
 
     }
 
     public void unfriendly(String name) {
         //add to unfriendly subset
-        disjointSubsets.union(name, disjointSubsets.find("U"));
+        disjointSubsets.union(name, "U");
     }
 
     public Network memberOfNetwork(String name) {
@@ -88,6 +88,7 @@ public class AL08 {
         al08.addPerson("Kalle");
         al08.talkedToEachOther("Kalle", "Juku");
         System.out.println("Pärast seda kui Juku rääkis Kallega, Kalle staatus: "+al08.memberOfNetwork("Kalle"));
+        System.out.println("Siia peaks tulema U "+al08.disjointSubsets.find("Kalle"));
 
     }
 

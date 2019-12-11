@@ -32,7 +32,7 @@ public class DisjointSubsets {
         Object setX = find(element1);
         Object setY = find(element2);
         if (setX == null || setY == null || setX == setY)
-           return;
+            return;
         Node nodeX =  objectsToNodes.get(setX);
         Node nodeY =  objectsToNodes.get(setY);
         if (nodeX.count > nodeY.count) {
