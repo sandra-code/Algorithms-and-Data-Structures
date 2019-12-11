@@ -49,8 +49,8 @@ public class DisjointSubsets {
         if(objectsToNodes.containsKey(element)){
             throw new IllegalArgumentException();
         }
-        else {
+
             objectsToNodes.put(element, new Node(element, 0));
-        }
+
     }
 }
