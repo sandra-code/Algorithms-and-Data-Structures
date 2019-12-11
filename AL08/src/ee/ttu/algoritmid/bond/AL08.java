@@ -18,10 +18,10 @@ public class AL08 {
 
     public void talkedToEachOther(String name1, String name2) {
         if(memberOfNetwork(name1)==Network.UNKNOWN){
-            disjointSubsets.union(name1, name2);
+            disjointSubsets.union(name2, name1);
         }
         else if(memberOfNetwork(name2)==Network.UNKNOWN){
-            disjointSubsets.union(name2, name1);
+            disjointSubsets.union(name1, name2);
         }
 
         //peab meelde jätma kellega on suheldud
