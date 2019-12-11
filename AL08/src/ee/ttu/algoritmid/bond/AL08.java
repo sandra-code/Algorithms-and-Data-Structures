@@ -43,26 +43,18 @@ public class AL08 {
     }
 
     public void addPerson(String name) {
-        if(name.equals("A")){
-            disjointSubsets.addSubset("A");
-        }
-        else if(name.equals("U")){
-            disjointSubsets.addSubset("U");
-        }
-        else {
-            disjointSubsets.addSubset(name);
-        }
+        disjointSubsets.addSubset(name);
     }
 
     public void friendly(String name) {
         ///add to friendly subset
-        disjointSubsets.union(name, "A");
+        disjointSubsets.union("A", name);
 
     }
 
     public void unfriendly(String name) {
         //add to unfriendly subset
-        disjointSubsets.union(name, "U");
+        disjointSubsets.union("U", name);
     }
 
     public Network memberOfNetwork(String name) {
@@ -99,6 +91,11 @@ public class AL08 {
         al08.talkedToEachOther("Kalle", "Juku");
         System.out.println("Pärast seda kui Juku rääkis Kallega, Kalle staatus: "+al08.memberOfNetwork("Kalle"));
         System.out.println("Siia peaks tulema U "+al08.disjointSubsets.find("Kalle"));
+        al08.addPerson("Kati");
+        al08.addPerson("Mati");
+        al08.talkedToEachOther("Kati", "Mati");
+        al08.talkedToEachOther("Kati","Mari");
+        System.out.println("Pärast seda Kati rääkis Mariga, Mati staatus  "+al08.memberOfNetwork("Mati"));
 
     }
 
