@@ -6,7 +6,7 @@ public class HW02tester {
 
     public static void main(String[] args) {
         HW02 h = new HW02();
-
+//
         int[][] map = new int[][]{
                 { 1, 2, 2 },
                 { 2, 10, 1 },
