@@ -7,8 +7,8 @@ import java.util.List;
 public class HW02 implements TrampolineCenter {
     //Row ja col näitavad, mis suunas saab liikuda
 
-    private static int[] row = { 0, 0, 0, 1 };
-    private static int[] col = { 0, 0, 1, 0 };
+    private static int[] row = {  0, 1 };
+    private static int[] col = { 1, 0 };
     @Override
     public List<String> findMinJumps(int[][] map) {
         int x=0;
@@ -34,7 +34,7 @@ public class HW02 implements TrampolineCenter {
             }
 
             int n = map[i][j];
-            for (int k = 0; k < 4; k++)
+            for (int k = 0; k < 2; k++)
             {
                 x = i + row[k] * n;
                 y = j + col[k] * n;
