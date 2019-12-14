@@ -6,16 +6,16 @@ import java.util.List;
 
 public class HW02 implements TrampolineCenter {
     //Row ja col näitavad, mis suunas saab liikuda
-
-    private static int[] row = {  0, 1 };
+    private static int[] row = { 0, 1 };
     private static int[] col = { 1, 0 };
     @Override
     public List<String> findMinJumps(int[][] map) {
+        //Start koordinaadid x ja y
         int x=0;
         int y=0;
         LinkedList<String> pathList = new LinkedList<>();
         Map<Node, Node> prev = new HashMap<>();
-        Queue<Node> q = new LinkedList<Node>();
+        Queue<Node> q = new LinkedList<>();
         Node src = new Node(x, y, null);
 
         q.add(src);
@@ -80,7 +80,7 @@ public class HW02 implements TrampolineCenter {
         return pathList;
     }
 
-    private static boolean isValid(int x, int y, int N) {
-        return (x >= 0 && x < N) && (y >= 0 && y < N);
+    private static boolean isValid(int x, int y, int size) {
+        return (x >= 0 && x < size) && (y >= 0 && y < size);
     }
 }
