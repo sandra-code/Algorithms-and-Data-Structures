@@ -74,6 +74,7 @@ public class HW02 implements TrampolineCenter {
 
             }
         Collections.reverse(pathList);
+        Exception e = new Exception(pathList.toString());
         return pathList;
     }
 
