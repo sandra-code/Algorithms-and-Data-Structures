@@ -15,7 +15,7 @@ public class HW02 implements TrampolineCenter {
         int y=0;
         LinkedList<String> pathList = new LinkedList<>();
         Map<Node, Node> prev = new HashMap<>();
-        Queue<Node> q = new ArrayDeque<>();
+        Queue<Node> q = new LinkedList<Node>();
         Node src = new Node(x, y, null);
 
         q.add(src);
