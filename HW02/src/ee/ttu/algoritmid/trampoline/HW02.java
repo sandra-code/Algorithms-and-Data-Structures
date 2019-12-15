@@ -11,12 +11,11 @@ public class HW02 implements TrampolineCenter {
     @Override
     public List<String> findMinJumps(int[][] map) {
         //Start koordinaadid x ja y
-        int x=0;
-        int y=0;
+        int x,y;
         LinkedList<String> pathList = new LinkedList<>();
         Map<Node, Node> prev = new HashMap<>();
         Queue<Node> q = new LinkedList<>();
-        Node src = new Node(x, y, null);
+        Node src = new Node(0, 0, null);
 
         q.add(src);
         Node curr = new Node(0,0, null);
